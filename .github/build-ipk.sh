@@ -70,7 +70,7 @@ echo -e '#!/bin/sh
 [ -s ${IPKG_INSTROOT}/lib/functions.sh ] || exit 0
 . ${IPKG_INSTROOT}/lib/functions.sh
 default_postinst $0 $@' > "$TEMP_PKG_DIR/CONTROL/postinst"
-chmod 0755 "$TEMP_PKG_DIR/CONTROL/postinst"
+chmod +x "$TEMP_PKG_DIR/CONTROL/postinst"
 
 echo -e "[ -n "\${IPKG_INSTROOT}" ] || {
 	(. /etc/uci-defaults/$PKG_NAME) && rm -f /etc/uci-defaults/$PKG_NAME
@@ -78,16 +78,16 @@ echo -e "[ -n "\${IPKG_INSTROOT}" ] || {
 	rm -rf /tmp/luci-modulecache/
 	exit 0
 }" > "$TEMP_PKG_DIR/CONTROL/postinst-pkg"
-chmod 0755 "$TEMP_PKG_DIR/CONTROL/postinst-pkg"
+chmod +x "$TEMP_PKG_DIR/CONTROL/postinst-pkg"
 
 echo -e '#!/bin/sh
 [ -s ${IPKG_INSTROOT}/lib/functions.sh ] || exit 0
 . ${IPKG_INSTROOT}/lib/functions.sh
 default_prerm $0 $@' > "$TEMP_PKG_DIR/CONTROL/prerm"
-chmod 0755 "$TEMP_PKG_DIR/CONTROL/prerm"
+chmod +x "$TEMP_PKG_DIR/CONTROL/prerm"
 
 curl -fsSL "https://raw.githubusercontent.com/openwrt/openwrt/master/scripts/ipkg-build" -o "$TEMP_DIR/ipkg-build"
-chmod 0755 "$TEMP_DIR/ipkg-build"
+chmod +x "$TEMP_DIR/ipkg-build"
 "$TEMP_DIR/ipkg-build" -m "" "$TEMP_PKG_DIR" "$TEMP_DIR"
 
 mv "$TEMP_DIR/${PKG_NAME}_${PKG_VERSION}_all.ipk" "$BASE_DIR/${PKG_NAME}_${PKG_VERSION}_all.ipk"

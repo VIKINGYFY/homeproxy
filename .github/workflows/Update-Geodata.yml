@@ -1,0 +1,57 @@
+name: Update Geodata
+
+on:
+  schedule:
+    - cron: 0 0 * * 0
+  workflow_dispatch:
+
+env:
+  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+permissions: write-all
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Projects
+        uses: actions/checkout@main
+
+      - name: Initialization Environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo -E apt -yqq update
+          sudo -E apt -yqq full-upgrade
+          sudo -E apt -yqq autoremove --purge
+          sudo -E apt -yqq autoclean
+          sudo -E apt -yqq clean
+          sudo -E systemctl daemon-reload
+          sudo -E timedatectl set-timezone "Asia/Shanghai"
+
+      - name: Update Geodata
+        run: |
+          RES_RULES="surge"
+          RES_PATCH="root/etc/homeproxy/resources"
+
+          rm -rf ./$RES_PATCH/*
+
+          git clone -q --depth=1 --single-branch --branch "release" "https://github.com/Loyalsoldier/surge-rules.git" ./$RES_RULES/
+          cd ./$RES_RULES/ && RES_VER=$(git log -1 --pretty=format:'%s' -- $RES_FILE | grep -o "[0-9]*")
+
+          echo "RES_VER=$RES_VER" >> $GITHUB_ENV
+
+          echo $RES_VER | tee china_ip4.ver china_ip6.ver china_list.ver gfw_list.ver
+          awk -F, '/^IP-CIDR,/{print $2 > "china_ip4.txt"} /^IP-CIDR6,/{print $2 > "china_ip6.txt"}' cncidr.txt
+          sed 's/^\.//g' direct.txt > china_list.txt ; sed 's/^\.//g' gfw.txt > gfw_list.txt
+          mv -f ./{china_*,gfw_list}.{ver,txt} ../$RES_PATCH/
+
+          cd .. && rm -rf ./$RES_RULES/ && echo "homeproxy date has been updated!"
+
+      - name: Commit Changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "<41898282+github-actions[bot]@users.noreply.github.com>"
+          git add .
+          git commit -m "chore(resources): update geodata to ${{env.RES_VER}}"
+          git push -f origin HEAD:dev
