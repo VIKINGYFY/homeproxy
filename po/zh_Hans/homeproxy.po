@@ -385,7 +385,7 @@ msgstr "连接检查"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1251
 msgid "Cron expression"
-msgstr ""
+msgstr "定时任务表达式"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:226
 msgid "Custom routing"
@@ -2137,7 +2137,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1252
 msgid "The default value is 2:00 every day"
-msgstr ""
+msgstr "默认值是每天2:00。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:713
 msgid ""
