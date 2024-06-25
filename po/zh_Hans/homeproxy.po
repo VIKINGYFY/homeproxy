@@ -12,7 +12,7 @@ msgstr ""
 msgid "%s log"
 msgstr "%s 日志"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1366
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1368
 msgid "%s nodes removed"
 msgstr "移除了 %s 个节点"
 
@@ -106,7 +106,7 @@ msgid "All ports"
 msgstr "所有端口"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1086
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1292
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1294
 msgid "Allow insecure"
 msgstr "允许不安全连接"
 
@@ -114,7 +114,7 @@ msgstr "允许不安全连接"
 msgid "Allow insecure connection at TLS client."
 msgstr "允许 TLS 客户端侧的不安全连接。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1293
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1295
 msgid "Allow insecure connection by default when add nodes from subscriptions."
 msgstr "从订阅获取节点时，默认允许不安全连接。"
 
@@ -144,7 +144,7 @@ msgstr "替代 HTTP 端口"
 msgid "Alternative TLS port"
 msgstr "替代 HTTPS 端口"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1329
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1331
 msgid "An error occurred during updating subscriptions: %s"
 msgstr "更新订阅时发生错误：%s"
 
@@ -255,7 +255,7 @@ msgid ""
 "Bind outbound traffic to specific interface. Leave empty to auto detect."
 msgstr "绑定出站流量至指定端口。留空自动检测。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1282
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1284
 msgid "Blacklist mode"
 msgstr "黑名单模式"
 
@@ -383,6 +383,10 @@ msgstr "拥塞控制算法"
 msgid "Connection check"
 msgstr "连接检查"
 
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1251
+msgid "Cron expression"
+msgstr ""
+
 #: htdocs/luci-static/resources/view/homeproxy/client.js:226
 msgid "Custom routing"
 msgstr "自定义路由"
@@ -449,7 +453,7 @@ msgstr "默认域名解析策略。"
 msgid "Default outbound"
 msgstr "默认出站"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1300
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1302
 msgid "Default packet encoding"
 msgstr "默认包封装格式"
 
@@ -492,7 +496,7 @@ msgstr "直连 MAC 地址"
 #: htdocs/luci-static/resources/view/homeproxy/node.js:596
 #: htdocs/luci-static/resources/view/homeproxy/node.js:608
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1165
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1281
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1283
 #: htdocs/luci-static/resources/view/homeproxy/server.js:194
 #: htdocs/luci-static/resources/view/homeproxy/server.js:206
 msgid "Disable"
@@ -579,7 +583,7 @@ msgstr "下载带宽"
 msgid "Download bandwidth in Mbps."
 msgstr "下载带宽（单位：Mbps）。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1288
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1290
 msgid ""
 "Drop/keep nodes that contain the specific keywords. <a target=\"_blank\" "
 "href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/"
@@ -589,7 +593,7 @@ msgstr ""
 "developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions\">"
 "正则表达式</a>。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1280
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1282
 msgid "Drop/keep specific nodes from subscriptions."
 msgstr "从订阅中 丢弃/保留 指定节点"
 
@@ -740,8 +744,8 @@ msgstr "加密方式"
 #: htdocs/luci-static/resources/view/homeproxy/node.js:461
 #: htdocs/luci-static/resources/view/homeproxy/node.js:564
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1186
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1269
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1272
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1271
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1274
 #: htdocs/luci-static/resources/view/homeproxy/server.js:159
 #: htdocs/luci-static/resources/view/homeproxy/server.js:540
 #: htdocs/luci-static/resources/view/homeproxy/server.js:542
@@ -764,11 +768,11 @@ msgstr "外部账户密钥标识符"
 msgid "Failed to upload %s, error: %s."
 msgstr "上传 %s 失败，错误：%s。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1287
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1289
 msgid "Filter keywords"
 msgstr "过滤关键词"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1279
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1281
 msgid "Filter nodes"
 msgstr "过滤节点"
 
@@ -1341,7 +1345,7 @@ msgstr "多路复用协议。"
 msgid "NOT RUNNING"
 msgstr "未运行"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1306
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1308
 msgid "NOTE: Save current settings before updating subscriptions."
 msgstr "注意：更新订阅前先保存当前配置。"
 
@@ -1375,11 +1379,11 @@ msgstr "无 TCP 传输层, 纯 HTTP 已合并到 HTTP 传输层。"
 msgid "No additional encryption support: It's basically duplicate encryption."
 msgstr "无额外加密支持：它基本上是重复加密。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1322
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1324
 msgid "No subscription available"
 msgstr "无可用订阅"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1347
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1349
 msgid "No subscription node"
 msgstr "无订阅节点"
 
@@ -1710,11 +1714,11 @@ msgstr "区域 ID"
 msgid "Remote"
 msgstr "远程"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1344
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1346
 msgid "Remove %s nodes"
 msgstr "移除 %s 个节点"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1334
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1336
 msgid "Remove all nodes from subscriptions"
 msgstr "移除所有订阅节点"
 
@@ -1803,11 +1807,11 @@ msgstr "Salamander"
 msgid "Same as main node"
 msgstr "保持与主节点一致"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1308
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1310
 msgid "Save current settings"
 msgstr "保存当前设置"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1305
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1307
 msgid "Save subscriptions settings"
 msgstr "保存订阅设置"
 
@@ -1952,7 +1956,7 @@ msgstr ""
 msgid "String"
 msgstr "字符串"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1262
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1264
 msgid "Subscription URL-s"
 msgstr "订阅地址"
 
@@ -1969,7 +1973,7 @@ msgid "Successfully updated."
 msgstr "更新成功。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:392
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1263
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1265
 msgid ""
 "Support Hysteria, Shadowsocks(R), Trojan, v2rayN (VMess), and XTLS (VLESS) "
 "online configuration delivery standard."
@@ -2131,6 +2135,10 @@ msgstr ""
 "><code>(source_port || source_port_range)</code> &&<br/><code>其他字段</"
 "code>。此外，包含的所有规则集会被合并而不是独立生效。"
 
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1252
+msgid "The default value is 2:00 every day"
+msgstr ""
+
 #: htdocs/luci-static/resources/view/homeproxy/client.js:713
 msgid ""
 "The domain strategy for resolving the domain name in the address. dns."
@@ -2212,7 +2220,7 @@ msgstr ""
 "检测到任何活动，则会关闭连接。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1089
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1295
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1297
 msgid ""
 "This is <strong>DANGEROUS</strong>, your traffic is almost like "
 "<strong>PLAIN TEXT</strong>! Use at your own risk!"
@@ -2315,7 +2323,7 @@ msgstr "未知错误：%s"
 msgid "Unsupported fingerprint!"
 msgstr "不支持的指纹！"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1319
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1321
 msgid "Update %s subscriptions"
 msgstr "更新 %s 个订阅"
 
@@ -2331,19 +2339,15 @@ msgstr "更新间隔"
 msgid "Update interval of rule set.<br/><code>1d</code> will be used if empty."
 msgstr "规则集更新间隔。<br/>留空使用 <code>1d</code>。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1314
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1316
 msgid "Update nodes from subscriptions"
 msgstr "从订阅更新节点"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1258
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1260
 msgid "Update subscriptions via proxy."
 msgstr "使用代理更新订阅。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1251
-msgid "Update time"
-msgstr "更新时间"
-
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1257
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1259
 msgid "Update via proxy"
 msgstr "使用代理更新"
 
@@ -2417,7 +2421,7 @@ msgstr "WAN IP 策略"
 msgid "WebSocket"
 msgstr "WebSocket"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1283
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1285
 msgid "Whitelist mode"
 msgstr "白名单模式"
 
@@ -2443,7 +2447,7 @@ msgid "Xinfeng Public DNS (114.114.114.114)"
 msgstr "信风公共 DNS（114.114.114.114）"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:932
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1303
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1305
 msgid "Xudp (Xray-core)"
 msgstr "Xudp (Xray-core)"
 
@@ -2505,12 +2509,12 @@ msgstr "非空值"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:671
 #: htdocs/luci-static/resources/view/homeproxy/node.js:930
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1301
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1303
 msgid "none"
 msgstr "无"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:931
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1302
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1304
 msgid "packet addr (v2ray-core v5+)"
 msgstr "packet addr (v2ray-core v5+)"
 
@@ -2574,8 +2578,8 @@ msgstr "有效 IP 地址"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:1010
 #: htdocs/luci-static/resources/view/homeproxy/client.js:1013
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1269
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1272
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1271
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1274
 msgid "valid URL"
 msgstr "有效网址"
 
@@ -2604,6 +2608,9 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
+
+#~ msgid "Update time"
+#~ msgstr "更新时间"
 
 #~ msgid ""
 #~ "The default rule uses the following matching logic:<br/><code>(domain || "
