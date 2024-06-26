@@ -595,7 +595,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1282
 msgid "Drop/keep specific nodes from subscriptions."
-msgstr "从订阅中 丢弃/保留 指定节点"
+msgstr "从订阅中 丢弃/保留 指定节点。"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:613
 msgid ""
@@ -1315,7 +1315,7 @@ msgstr "最小流数量"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1252
 msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)"
-msgstr ""
+msgstr "分钟(0-59) 小时(0-23) 日期(1-31) 月份(1-12) 星期(0-7)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:291
 msgid "Mixed"
