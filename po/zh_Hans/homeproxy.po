@@ -1313,6 +1313,10 @@ msgstr "在打开新连接之前，连接中的最小多路复用流数量。"
 msgid "Minimum streams"
 msgstr "最小流数量"
 
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1252
+msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)"
+msgstr ""
+
 #: htdocs/luci-static/resources/view/homeproxy/client.js:291
 msgid "Mixed"
 msgstr "混合"
@@ -2135,10 +2139,6 @@ msgstr ""
 "><code>(source_port || source_port_range)</code> &&<br/><code>其他字段</"
 "code>。此外，包含的所有规则集会被合并而不是独立生效。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1252
-msgid "The default value is 2:00 every day"
-msgstr "默认值是每天2:00。"
-
 #: htdocs/luci-static/resources/view/homeproxy/client.js:713
 msgid ""
 "The domain strategy for resolving the domain name in the address. dns."
@@ -2608,6 +2608,9 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
+
+#~ msgid "The default value is 2:00 every day"
+#~ msgstr "默认值是每天2:00。"
 
 #~ msgid "Update time"
 #~ msgstr "更新时间"

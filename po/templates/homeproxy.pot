@@ -1287,6 +1287,10 @@ msgstr ""
 msgid "Minimum streams"
 msgstr ""
 
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1252
+msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)"
+msgstr ""
+
 #: htdocs/luci-static/resources/view/homeproxy/client.js:291
 msgid "Mixed"
 msgstr ""
@@ -2078,10 +2082,6 @@ msgid ""
 "code> &&<br/><code>(source_port || source_port_range)</code> &&<br/"
 "><code>other fields</code>.<br/>Additionally, included rule sets can be "
 "considered merged rather than as a single rule sub-item."
-msgstr ""
-
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1252
-msgid "The default value is 2:00 every day"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:713
