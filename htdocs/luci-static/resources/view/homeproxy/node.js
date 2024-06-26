@@ -1249,7 +1249,7 @@ return view.extend({
 		o.rmempty = false;
 
 		o = s.taboption('subscription', form.Value, 'auto_update_time', _('Cron expression'),
-			_('The default value is 2:00 every day'));
+			_('Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)'));
 		o.default = '0 2 * * *';
 		o.placeholder = '0 2 * * *';
 		o.rmempty = false;
