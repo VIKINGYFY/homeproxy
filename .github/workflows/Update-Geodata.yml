@@ -25,7 +25,7 @@ jobs:
           rm -rf ./$RES_PATCH/*
 
           git clone -q --depth=1 --single-branch --branch "release" "https://github.com/Loyalsoldier/surge-rules.git" ./$RES_RULES/
-          cd ./$RES_RULES/ && RES_VER=$(git log -1 --pretty=format:'%s' -- $RES_FILE | grep -o "[0-9]*")
+          cd ./$RES_RULES/ && RES_VER=$(git log -1 --pretty=format:'%s' | grep -o "[0-9]*")
 
           echo "RES_VER=$RES_VER" >> $GITHUB_ENV
 
