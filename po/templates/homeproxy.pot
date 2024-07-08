@@ -1288,7 +1288,7 @@ msgid "Minimum streams"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1252
-msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)"
+msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:291

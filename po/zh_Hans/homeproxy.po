@@ -1314,8 +1314,8 @@ msgid "Minimum streams"
 msgstr "最小流数量"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1252
-msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-7)"
-msgstr ""
+msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)"
+msgstr "分(0-59) 时(0-23) 日(1-31) 月(1-12) 周(0-6)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:291
 msgid "Mixed"
@@ -2608,9 +2608,6 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
-
-#~ msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)"
-#~ msgstr "分(0-59) 时(0-23) 日(1-31) 月(1-12) 周(0-6)"
 
 #~ msgid "The default value is 2:00 every day"
 #~ msgstr "默认值是每天2:00。"
