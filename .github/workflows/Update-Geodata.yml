@@ -38,8 +38,8 @@ jobs:
           mv -f ./{china_*,gfw_list}.{ver,txt} ../$RES_PATCH/
 
           #更新TG列表
-          TG_IPV4=$(grep "^IP-CIDR," "telegramcidr.txt" | sed "s/IP-CIDR,/list wan_proxy_ipv4_ips /g")
-          TG_IPV6=$(grep "^IP-CIDR6," "telegramcidr.txt" | sed "s/IP-CIDR6,/list wan_proxy_ipv6_ips /g")
+          TG_IPV4=$(grep "^IP-CIDR," "telegramcidr.txt" | sed "s/IP-CIDR,\(.*\)/list wan_proxy_ipv4_ips '\1'/g")
+          TG_IPV6=$(grep "^IP-CIDR6," "telegramcidr.txt" | sed "s/IP-CIDR6,\(.*\)/list wan_proxy_ipv6_ips '\1'/g")
           TG_IPV4_ENTRIES=$(echo "$TG_IPV4" | sed ':a;N;$!ba; s/\n/\\\n/g')
           TG_IPV6_ENTRIES=$(echo "$TG_IPV6" | sed ':a;N;$!ba; s/\n/\\\n/g')
 
