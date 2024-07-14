@@ -3,8 +3,6 @@ name: Rescan Translation
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'dev'
     paths:
       - 'htdocs/**'
       - 'root/**'
@@ -43,4 +41,4 @@ jobs:
           git config --local user.email "<github-actions[bot]@users.noreply.github.com>"
           git add .
           git commit -m "chore(po): rescan translation"
-          git push -f origin HEAD:dev
+          git push -f origin HEAD:main
