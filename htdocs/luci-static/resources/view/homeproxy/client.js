@@ -104,7 +104,7 @@ return view.extend({
 		var m, s, o, ss, so;
 
 		var features = data[1],
-		    hosts = data[2]?.hosts;
+			hosts = data[2]?.hosts;
 
 		m = new form.Map('homeproxy', _('HomeProxy'),
 			_('The modern ImmortalWrt proxy platform for ARM64/AMD64.'));
@@ -127,7 +127,7 @@ return view.extend({
 		var proxy_nodes = {};
 		uci.sections(data[0], 'node', (res) => {
 			var nodeaddr = ((res.type === 'direct') ? res.override_address : res.address) || '',
-			    nodeport = ((res.type === 'direct') ? res.override_port : res.port) || '';
+				nodeport = ((res.type === 'direct') ? res.override_port : res.port) || '';
 
 			proxy_nodes[res['.name']] =
 				String.format('[%s] %s', res.type, res.label || ((stubValidator.apply('ip6addr', nodeaddr) ?

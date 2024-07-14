@@ -168,8 +168,8 @@ return view.extend({
 		o = s.option(form.ListValue, 'hysteria_protocol', _('Protocol'));
 		o.value('udp');
 		/* WeChat-Video / FakeTCP are unsupported by sing-box currently
-		   o.value('wechat-video');
-		   o.value('faketcp');
+			o.value('wechat-video');
+			o.value('faketcp');
 		*/
 		o.default = 'udp';
 		o.depends('type', 'hysteria');

@@ -193,8 +193,8 @@ export function parseURL(url) {
 		});
 
 		if (validation('ip4addr', val) ||
-		    validation('ip6addr', replace(val, /\[|\]/g, '')) ||
-		    validation('hostname', val))
+			validation('ip6addr', replace(val, /\[|\]/g, '')) ||
+			validation('hostname', val))
 			objurl.hostname = val;
 
 		return '';

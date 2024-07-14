@@ -27,15 +27,15 @@ const uciconfig = 'homeproxy';
 uci.load(uciconfig);
 
 const ucimain = 'config',
-      ucinode = 'node',
-      ucisubscription = 'subscription';
+	ucinode = 'node',
+	ucisubscription = 'subscription';
 
 const allow_insecure = uci.get(uciconfig, ucisubscription, 'allow_insecure') || '0',
-      filter_mode = uci.get(uciconfig, ucisubscription, 'filter_nodes') || 'disabled',
-      filter_keywords = uci.get(uciconfig, ucisubscription, 'filter_keywords') || [],
-      packet_encoding = uci.get(uciconfig, ucisubscription, 'packet_encoding') || 'xudp',
-      subscription_urls = uci.get(uciconfig, ucisubscription, 'subscription_url') || [],
-      via_proxy = uci.get(uciconfig, ucisubscription, 'update_via_proxy') || '0';
+	filter_mode = uci.get(uciconfig, ucisubscription, 'filter_nodes') || 'disabled',
+	filter_keywords = uci.get(uciconfig, ucisubscription, 'filter_keywords') || [],
+	packet_encoding = uci.get(uciconfig, ucisubscription, 'packet_encoding') || 'xudp',
+	subscription_urls = uci.get(uciconfig, ucisubscription, 'subscription_url') || [],
+	via_proxy = uci.get(uciconfig, ucisubscription, 'update_via_proxy') || '0';
 
 const routing_mode = uci.get(uciconfig, ucimain, 'routing_mode') || 'bypass_mainalnd_china';
 let main_node, main_udp_node;
@@ -65,7 +65,7 @@ function filter_check(name) {
 
 /* Common var start */
 const node_cache = {},
-      node_result = [];
+	node_result = [];
 
 const ubus = connect();
 const sing_features = ubus.call('luci.homeproxy', 'singbox_get_features', {}) || {};
@@ -485,7 +485,7 @@ function main() {
 			const label = config.label;
 			config.label = null;
 			const confHash = calcStringMD5(sprintf('%J', config)),
-			      nameHash = calcStringMD5(label);
+				nameHash = calcStringMD5(label);
 			config.label = label;
 
 			if (filter_check(config.label))

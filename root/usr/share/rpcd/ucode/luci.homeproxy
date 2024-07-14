@@ -76,8 +76,8 @@ const methods = {
 
 				/* Kanged from luci-proto-openconnect */
 				const beg = priv ? /^-----BEGIN (RSA|EC) PRIVATE KEY-----$/ : /^-----BEGIN CERTIFICATE-----$/,
-				      end = priv ? /^-----END (RSA|EC) PRIVATE KEY-----$/ : /^-----END CERTIFICATE-----$/,
-				      lines = split(trim(filecontent), /[\r\n]/);
+					end = priv ? /^-----END (RSA|EC) PRIVATE KEY-----$/ : /^-----END CERTIFICATE-----$/,
+					lines = split(trim(filecontent), /[\r\n]/);
 				let start = false, i;
 
 				for (i = 0; i < length(lines); i++) {

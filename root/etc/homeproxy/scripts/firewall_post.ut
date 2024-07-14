@@ -55,11 +55,11 @@ if (routing_port === 'common')
 	routing_port = uci.get(cfgname, 'infra', 'common_port') || '22,53,80,143,443,465,587,853,873,993,995,8080,8443,9418';
 
 const proxy_mode = uci.get(cfgname, 'config', 'proxy_mode') || 'redirect_tproxy',
-      ipv6_support = uci.get(cfgname, 'config', 'ipv6_support') || '0';
+	ipv6_support = uci.get(cfgname, 'config', 'ipv6_support') || '0';
 
 let self_mark, redirect_port,
-    tproxy_port, tproxy_mark,
-    tun_name, tun_mark;
+	tproxy_port, tproxy_mark,
+	tun_name, tun_mark;
 
 if (match(proxy_mode, /redirect/)) {
 	self_mark = uci.get(cfgname, 'infra', 'self_mark') || '100';
