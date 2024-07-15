@@ -160,6 +160,8 @@ msgid ""
 "prefix to every query by default.<br/>If value is an IP address instead of "
 "prefix, <code>/32</code> or <code>/128</code> will be appended automatically."
 msgstr ""
+"将带有指定 IP 前缀的 <code>edns0-subnet</code> OPT 记录附加到每个查询。如果值"
+"是 IP 地址而不是前缀，则会自动添加 <code>/32</code> 或 <code>/128</code>。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1119
 msgid "Append self-signed certificate"
