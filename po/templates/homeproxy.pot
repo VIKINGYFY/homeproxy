@@ -86,7 +86,7 @@ msgid "Address strategy"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:562
-msgid "Alibaba Cloud DNS"
+msgid "Aliyun"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:183
@@ -324,12 +324,12 @@ msgstr ""
 msgid "Client version"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:161
-msgid "CloudFlare Public DNS (1.1.1.1)"
+#: htdocs/luci-static/resources/view/homeproxy/server.js:563
+msgid "CloudFlare"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/server.js:563
-msgid "Cloudflare"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:161
+msgid "CloudFlare Public DNS (1.1.1.1)"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:122
