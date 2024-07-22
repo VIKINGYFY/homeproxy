@@ -98,7 +98,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:183
 msgid "Aliyun Public DNS (223.5.5.5)"
-msgstr "阿里云公共 DNS（223.5.5.5）"
+msgstr "阿里 公共 DNS（223.5.5.5）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:234
 msgid "All ports"
@@ -821,7 +821,7 @@ msgstr "谷歌"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:162
 msgid "Google Public DNS (8.8.8.8)"
-msgstr "谷歌公共 DNS（8.8.8.8）"
+msgstr "Google 公共 DNS（8.8.8.8）"
 
 #: root/usr/share/rpcd/acl.d/luci-app-homeproxy.json:3
 msgid "Grant access to homeproxy configuration"
@@ -1630,7 +1630,7 @@ msgstr "QUIC 流接收窗口"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:163
 msgid "Quad9 Public DNS (9.9.9.9)"
-msgstr ""
+msgstr "Quad9 公共 DNS（9.9.9.9）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:787
 msgid "Query type"
@@ -2048,7 +2048,7 @@ msgstr "让客户端使用 BBR 流控算法。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:185
 msgid "Tencent Public DNS (119.29.29.29)"
-msgstr "腾讯公共 DNS（119.29.29.29）"
+msgstr "腾讯 公共 DNS（119.29.29.29）"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:549
 msgid "The ACME CA provider to use."
@@ -2236,7 +2236,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:184
 msgid "TrafficRoute Public DNS (180.184.1.1)"
-msgstr ""
+msgstr "字节 公共 DNS（180.184.1.1）"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:815
 #: htdocs/luci-static/resources/view/homeproxy/server.js:317
@@ -2587,18 +2587,3 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
-
-#~ msgid "Alibaba Cloud DNS"
-#~ msgstr "阿里云 DNS"
-
-#~ msgid "Cloudflare"
-#~ msgstr "Cloudflare"
-
-#~ msgid "CNNIC Public DNS (210.2.4.8)"
-#~ msgstr "CNNIC 公共 DNS（210.2.4.8）"
-
-#~ msgid "Cisco Public DNS (208.67.222.222)"
-#~ msgstr "思科公共 DNS（208.67.222.222）"
-
-#~ msgid "Xinfeng Public DNS (114.114.114.114)"
-#~ msgstr "信风公共 DNS（114.114.114.114）"
