@@ -559,7 +559,7 @@ return view.extend({
 			o.modalonly = true;
 
 			o = s.option(form.ListValue, 'tls_dns01_provider', _('DNS provider'));
-			o.value('alidns', _('Aliyun'));
+			o.value('alidns', _('AliYun'));
 			o.value('cfdns', _('CloudFlare'));
 			o.depends('tls_dns01_challenge', '1');
 			o.default = 'cfdns';
