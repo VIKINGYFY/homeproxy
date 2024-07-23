@@ -53,7 +53,7 @@ msgstr "访问密钥"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:165
 msgid "AdGuard Public DNS (94.140.14.140)"
-msgstr ""
+msgstr "AdGuard 公共DNS（94.140.14.140）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:759
 msgid "Add a DNS rule"
@@ -102,7 +102,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:190
 msgid "AliYun Public DNS (223.5.5.5)"
-msgstr ""
+msgstr "阿里 公共DNS（223.5.5.5）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:239
 msgid "All ports"
@@ -327,7 +327,7 @@ msgstr "密码套件"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:167
 msgid "Cisco Public DNS (208.67.222.222)"
-msgstr ""
+msgstr "Cisco 公共DNS（208.67.222.222）"
 
 #: htdocs/luci-static/resources/view/homeproxy/status.js:165
 msgid "Clean log"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:161
 msgid "CloudFlare Public DNS (1.1.1.1)"
-msgstr "CloudFlare 公共 DNS（1.1.1.1）"
+msgstr "CloudFlare 公共DNS（1.1.1.1）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:122
 #: htdocs/luci-static/resources/view/homeproxy/server.js:69
@@ -407,7 +407,7 @@ msgstr "DNS 服务器"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:166
 msgid "DNS.SB Public DNS (185.222.222.222)"
-msgstr ""
+msgstr "DNS.SB 公共DNS（185.222.222.222）"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:556
 msgid "DNS01 challenge"
@@ -833,7 +833,7 @@ msgstr "谷歌"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:162
 msgid "Google Public DNS (8.8.8.8)"
-msgstr "Google 公共 DNS（8.8.8.8）"
+msgstr "Google 公共DNS（8.8.8.8）"
 
 #: root/usr/share/rpcd/acl.d/luci-app-homeproxy.json:3
 msgid "Grant access to homeproxy configuration"
@@ -1642,7 +1642,7 @@ msgstr "QUIC 流接收窗口"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:163
 msgid "Quad9 Public DNS (9.9.9.9)"
-msgstr "Quad9 公共 DNS（9.9.9.9）"
+msgstr "Quad9 公共DNS（9.9.9.9）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:792
 msgid "Query type"
@@ -2031,7 +2031,7 @@ msgstr "不强制执行 TLS。如未配置 TLS，将使用纯 HTTP 1.1。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:187
 msgid "TWNIC Public DNS (101.101.101.101)"
-msgstr ""
+msgstr "台网 公共DNS（101.101.101.101）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:683
 msgid ""
@@ -2064,7 +2064,7 @@ msgstr "让客户端使用 BBR 流控算法。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:189
 msgid "Tencent Public DNS (119.29.29.29)"
-msgstr "腾讯 公共 DNS（119.29.29.29）"
+msgstr "腾讯 公共DNS（119.29.29.29）"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:549
 msgid "The ACME CA provider to use."
@@ -2233,7 +2233,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:188
 msgid "ThreatBook Public DNS (117.50.10.10)"
-msgstr ""
+msgstr "微步 公共DNS（117.50.10.10）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:649
 msgid ""
@@ -2448,7 +2448,7 @@ msgstr "Xudp (Xray-core)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:164
 msgid "Yandex Public DNS (77.88.8.8)"
-msgstr ""
+msgstr "Yandex 公共DNS（77.88.8.8）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:201
 msgid "You can only have two servers set at maximum."
@@ -2607,9 +2607,3 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
-
-#~ msgid "Aliyun Public DNS (223.5.5.5)"
-#~ msgstr "阿里 公共 DNS（223.5.5.5）"
-
-#~ msgid "TrafficRoute Public DNS (180.184.1.1)"
-#~ msgstr "字节 公共 DNS（180.184.1.1）"
