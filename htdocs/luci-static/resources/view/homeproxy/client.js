@@ -165,7 +165,7 @@ return view.extend({
 		o.value('94.140.14.140', _('AdGuard Public DNS (94.140.14.140)'));
 		o.value('185.222.222.222', _('DNS.SB Public DNS (185.222.222.222)'));
 		o.value('208.67.222.222', _('Cisco Public DNS (208.67.222.222)'));
-		o.default = '1.1.1.1';
+		o.default = '9.9.9.9';
 		o.rmempty = false;
 		o.depends({'routing_mode': 'custom', '!reverse': true});
 		o.validate = function(section_id, value) {
@@ -184,7 +184,6 @@ return view.extend({
 		if (features.hp_has_chinadns_ng) {
 			o = s.taboption('routing', form.DynamicList, 'china_dns_server', _('China DNS server'));
 			o.value('wan', _('WAN DNS (read from interface)'));
-			o.value('101.101.101.101', _('TWNIC Public DNS (101.101.101.101)'));
 			o.value('117.50.10.10', _('ThreatBook Public DNS (117.50.10.10)'));
 			o.value('119.29.29.29', _('Tencent Public DNS (119.29.29.29)'));
 			o.value('223.5.5.5', _('AliYun Public DNS (223.5.5.5)'));
