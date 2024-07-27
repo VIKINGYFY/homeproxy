@@ -53,7 +53,7 @@ msgstr "访问密钥"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:165
 msgid "AdGuard Public DNS (94.140.14.140)"
-msgstr ""
+msgstr "AdGuard 公共DNS（94.140.14.140）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:764
 msgid "Add a DNS rule"
@@ -98,11 +98,11 @@ msgstr "地址解析策略"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:562
 msgid "AliYun"
-msgstr ""
+msgstr "AliYun"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:189
 msgid "AliYun Public DNS (223.5.5.5)"
-msgstr ""
+msgstr "阿里 公共DNS（223.5.5.5）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:238
 msgid "All ports"
@@ -327,7 +327,7 @@ msgstr "密码套件"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:167
 msgid "Cisco Public DNS (208.67.222.222)"
-msgstr "思科公共 DNS（208.67.222.222）"
+msgstr "Cisco 公共DNS（208.67.222.222）"
 
 #: htdocs/luci-static/resources/view/homeproxy/status.js:165
 msgid "Clean log"
@@ -343,11 +343,11 @@ msgstr "客户端版本"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:563
 msgid "CloudFlare"
-msgstr ""
+msgstr "CloudFlare"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:161
 msgid "CloudFlare Public DNS (1.1.1.1)"
-msgstr "CloudFlare 公共 DNS（1.1.1.1）"
+msgstr "CloudFlare 公共DNS（1.1.1.1）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:122
 #: htdocs/luci-static/resources/view/homeproxy/server.js:69
@@ -370,7 +370,7 @@ msgstr "连接检查"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1251
 msgid "Cron expression"
-msgstr ""
+msgstr "定时任务表达式"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:227
 msgid "Custom routing"
@@ -407,7 +407,7 @@ msgstr "DNS 服务器"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:166
 msgid "DNS.SB Public DNS (185.222.222.222)"
-msgstr ""
+msgstr "DNS.SB 公共DNS（185.222.222.222）"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:556
 msgid "DNS01 challenge"
@@ -584,7 +584,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1282
 msgid "Drop/keep specific nodes from subscriptions."
-msgstr "从订阅中 丢弃/保留 指定节点"
+msgstr "从订阅中 丢弃/保留 指定节点。"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:612
 msgid ""
@@ -833,7 +833,7 @@ msgstr "谷歌"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:162
 msgid "Google Public DNS (8.8.8.8)"
-msgstr "谷歌公共 DNS（8.8.8.8）"
+msgstr "Google 公共DNS（8.8.8.8）"
 
 #: root/usr/share/rpcd/acl.d/luci-app-homeproxy.json:3
 msgid "Grant access to homeproxy configuration"
@@ -1309,7 +1309,7 @@ msgstr "最小流数量"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1252
 msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)"
-msgstr ""
+msgstr "分(0-59) 时(0-23) 日(1-31) 月(1-12) 周(0-6)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:292
 msgid "Mixed"
@@ -1657,7 +1657,7 @@ msgstr "QUIC 流接收窗口"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:163
 msgid "Quad9 Public DNS (9.9.9.9)"
-msgstr ""
+msgstr "Quad9 公共DNS（9.9.9.9）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:803
 msgid "Query type"
@@ -2085,7 +2085,7 @@ msgstr "让客户端使用 BBR 流控算法。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:188
 msgid "Tencent Public DNS (119.29.29.29)"
-msgstr "腾讯公共 DNS（119.29.29.29）"
+msgstr "腾讯 公共DNS（119.29.29.29）"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:549
 msgid "The ACME CA provider to use."
@@ -2254,7 +2254,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:187
 msgid "ThreatBook Public DNS (117.50.10.10)"
-msgstr ""
+msgstr "微步 公共DNS（117.50.10.10）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:654
 msgid ""
@@ -2469,7 +2469,7 @@ msgstr "Xudp (Xray-core)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:164
 msgid "Yandex Public DNS (77.88.8.8)"
-msgstr ""
+msgstr "Yandex 公共DNS（77.88.8.8）"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:200
 msgid "You can only have two servers set at maximum."
