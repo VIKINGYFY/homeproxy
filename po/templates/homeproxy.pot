@@ -874,9 +874,9 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:437
-#: htdocs/luci-static/resources/view/homeproxy/client.js:769
-msgid "Host Fields"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:436
+#: htdocs/luci-static/resources/view/homeproxy/client.js:768
+msgid "Host fields"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:709
@@ -1400,9 +1400,9 @@ msgstr ""
 msgid "Only proxy mainland China"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:436
-#: htdocs/luci-static/resources/view/homeproxy/client.js:768
-msgid "Other Fields"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:435
+#: htdocs/luci-static/resources/view/homeproxy/client.js:767
+msgid "Other fields"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:390
@@ -1497,9 +1497,9 @@ msgstr ""
 msgid "Port %s alrealy exists!"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:438
-#: htdocs/luci-static/resources/view/homeproxy/client.js:770
-msgid "Port Fields"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:437
+#: htdocs/luci-static/resources/view/homeproxy/client.js:769
+msgid "Port fields"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:538
@@ -1769,14 +1769,14 @@ msgstr ""
 msgid "Rule set URL"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:439
-#: htdocs/luci-static/resources/view/homeproxy/client.js:771
-msgid "SRC-IP Fields"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:438
+#: htdocs/luci-static/resources/view/homeproxy/client.js:770
+msgid "SRC-IP fields"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:440
-#: htdocs/luci-static/resources/view/homeproxy/client.js:772
-msgid "SRC-Port Fields"
+#: htdocs/luci-static/resources/view/homeproxy/client.js:439
+#: htdocs/luci-static/resources/view/homeproxy/client.js:771
+msgid "SRC-Port fields"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:515
