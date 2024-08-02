@@ -895,8 +895,8 @@ msgstr "HomeProxy 服务端"
 msgid "Host"
 msgstr "主机名"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:436
-#: htdocs/luci-static/resources/view/homeproxy/client.js:768
+#: htdocs/luci-static/resources/view/homeproxy/client.js:437
+#: htdocs/luci-static/resources/view/homeproxy/client.js:769
 msgid "Host fields"
 msgstr "主机字段"
 
@@ -1428,8 +1428,8 @@ msgstr "只处理来自指定接口的流量。留空表示全部。"
 msgid "Only proxy mainland China"
 msgstr "仅代理中国大陆"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:435
-#: htdocs/luci-static/resources/view/homeproxy/client.js:767
+#: htdocs/luci-static/resources/view/homeproxy/client.js:436
+#: htdocs/luci-static/resources/view/homeproxy/client.js:768
 msgid "Other fields"
 msgstr "其他字段"
 
@@ -1525,8 +1525,8 @@ msgstr "端口"
 msgid "Port %s alrealy exists!"
 msgstr "端口 %s 已存在！"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:437
-#: htdocs/luci-static/resources/view/homeproxy/client.js:769
+#: htdocs/luci-static/resources/view/homeproxy/client.js:438
+#: htdocs/luci-static/resources/view/homeproxy/client.js:770
 msgid "Port fields"
 msgstr "端口字段"
 
@@ -1797,13 +1797,13 @@ msgstr "规则集 IP CIDR 作为源 IP"
 msgid "Rule set URL"
 msgstr "规则集 URL"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:438
-#: htdocs/luci-static/resources/view/homeproxy/client.js:770
+#: htdocs/luci-static/resources/view/homeproxy/client.js:439
+#: htdocs/luci-static/resources/view/homeproxy/client.js:771
 msgid "SRC-IP fields"
 msgstr "源 IP 字段"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:439
-#: htdocs/luci-static/resources/view/homeproxy/client.js:771
+#: htdocs/luci-static/resources/view/homeproxy/client.js:440
+#: htdocs/luci-static/resources/view/homeproxy/client.js:772
 msgid "SRC-Port fields"
 msgstr "源端口字段"
 

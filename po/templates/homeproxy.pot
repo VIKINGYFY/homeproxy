@@ -874,8 +874,8 @@ msgstr ""
 msgid "Host"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:436
-#: htdocs/luci-static/resources/view/homeproxy/client.js:768
+#: htdocs/luci-static/resources/view/homeproxy/client.js:437
+#: htdocs/luci-static/resources/view/homeproxy/client.js:769
 msgid "Host fields"
 msgstr ""
 
@@ -1400,8 +1400,8 @@ msgstr ""
 msgid "Only proxy mainland China"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:435
-#: htdocs/luci-static/resources/view/homeproxy/client.js:767
+#: htdocs/luci-static/resources/view/homeproxy/client.js:436
+#: htdocs/luci-static/resources/view/homeproxy/client.js:768
 msgid "Other fields"
 msgstr ""
 
@@ -1497,8 +1497,8 @@ msgstr ""
 msgid "Port %s alrealy exists!"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:437
-#: htdocs/luci-static/resources/view/homeproxy/client.js:769
+#: htdocs/luci-static/resources/view/homeproxy/client.js:438
+#: htdocs/luci-static/resources/view/homeproxy/client.js:770
 msgid "Port fields"
 msgstr ""
 
@@ -1769,13 +1769,13 @@ msgstr ""
 msgid "Rule set URL"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:438
-#: htdocs/luci-static/resources/view/homeproxy/client.js:770
+#: htdocs/luci-static/resources/view/homeproxy/client.js:439
+#: htdocs/luci-static/resources/view/homeproxy/client.js:771
 msgid "SRC-IP fields"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:439
-#: htdocs/luci-static/resources/view/homeproxy/client.js:771
+#: htdocs/luci-static/resources/view/homeproxy/client.js:440
+#: htdocs/luci-static/resources/view/homeproxy/client.js:772
 msgid "SRC-Port fields"
 msgstr ""
 
