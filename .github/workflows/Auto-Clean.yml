@@ -2,7 +2,7 @@ name: Auto Clean
 
 on:
   schedule:
-    - cron: 0 0 * * 1
+    - cron: 0 1 * * 0
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
