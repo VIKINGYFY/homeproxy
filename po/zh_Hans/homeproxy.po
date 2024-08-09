@@ -1146,7 +1146,7 @@ msgstr "伪装"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:916
 msgid "Match <code>.outbounds[].server</code> domains."
-msgstr ""
+msgstr "匹配 <code>.outbounds[].server</code> 域名。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:858
 msgid "Match IP CIDR with query response."
@@ -1980,7 +1980,7 @@ msgstr "字符串"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1258
 msgid "Sub (%s)"
-msgstr ""
+msgstr "订阅（%s）"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1289
 msgid "Subscription URL-s"
@@ -2632,24 +2632,3 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
-
-#~ msgid "Match outbound."
-#~ msgstr "匹配出站。"
-
-#~ msgid "Alibaba Cloud DNS"
-#~ msgstr "阿里云 DNS"
-
-#~ msgid "Aliyun Public DNS (223.5.5.5)"
-#~ msgstr "阿里云公共 DNS（223.5.5.5）"
-
-#~ msgid "CNNIC Public DNS (210.2.4.8)"
-#~ msgstr "CNNIC 公共 DNS（210.2.4.8）"
-
-#~ msgid "Cloudflare"
-#~ msgstr "Cloudflare"
-
-#~ msgid "Update time"
-#~ msgstr "更新时间"
-
-#~ msgid "Xinfeng Public DNS (114.114.114.114)"
-#~ msgstr "信风公共 DNS（114.114.114.114）"
