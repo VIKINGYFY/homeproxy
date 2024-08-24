@@ -469,7 +469,7 @@ function renderNodeSettings(section, data, features, main_node, routing_mode) {
 	o.depends('type', 'direct');
 
 	o = s.option(form.Flag, 'proxy_protocol', _('Proxy protocol'),
-		_('Write proxy protocol in the connection header.'));
+		_('Write haproxy proxy protocol in the connection header.'));
 	o.depends('type', 'direct');
 	o.modalonly = true;
 
