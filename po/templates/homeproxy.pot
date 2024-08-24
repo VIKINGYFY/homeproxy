@@ -2421,7 +2421,7 @@ msgid "WireGuard requires base64-encoded private keys."
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:472
-msgid "Write proxy protocol in the connection header."
+msgid "Write haproxy proxy protocol in the connection header."
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:832

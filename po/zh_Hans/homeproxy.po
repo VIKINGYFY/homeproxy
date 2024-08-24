@@ -2485,8 +2485,8 @@ msgid "WireGuard requires base64-encoded private keys."
 msgstr "WireGuard 要求 base64 编码的私钥。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:472
-msgid "Write proxy protocol in the connection header."
-msgstr "在连接头中写入代理协议。"
+msgid "Write haproxy proxy protocol in the connection header."
+msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:832
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1342
@@ -2656,3 +2656,6 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:268
 msgid "valid uuid"
 msgstr "有效 uuid"
+
+#~ msgid "Write proxy protocol in the connection header."
+#~ msgstr "在连接头中写入代理协议。"
