@@ -2486,7 +2486,7 @@ msgstr "WireGuard 要求 base64 编码的私钥。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:472
 msgid "Write haproxy proxy protocol in the connection header."
-msgstr ""
+msgstr "在连接头中写入 HAProxy 代理协议。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:832
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1342
