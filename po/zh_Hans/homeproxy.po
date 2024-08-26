@@ -803,7 +803,7 @@ msgstr "游戏模式 MAC 地址"
 #: htdocs/luci-static/resources/view/homeproxy/server.js:325
 #: htdocs/luci-static/resources/view/homeproxy/server.js:327
 msgid "Generate"
-msgstr ""
+msgstr "生成"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:283
 #: htdocs/luci-static/resources/view/homeproxy/node.js:839
