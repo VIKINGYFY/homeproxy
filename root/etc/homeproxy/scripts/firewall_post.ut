@@ -90,7 +90,7 @@ for (let i in control_options)
 	control_info[i] = uci.get(cfgname, 'control', i);
 
 const dns_hijacked = uci.get('dhcp', '@dnsmasq[0]', 'dns_redirect') || '0',
-      dns_port = uci.get('dhcp', '@dnsmasq[0]', 'port') || '53';
+	  dns_port = uci.get('dhcp', '@dnsmasq[0]', 'port') || '53';
 /* UCI config end */
 -%}
 
