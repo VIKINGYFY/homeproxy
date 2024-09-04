@@ -211,7 +211,7 @@ msgstr "自动更新"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1289
 msgid "Auto update subscriptions and geodata."
-msgstr ""
+msgstr "自动更新订阅和数据。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:637
 msgid "BBR"
