@@ -230,7 +230,7 @@ msgstr "Base64"
 msgid "Based on google/gvisor."
 msgstr "基于 google/gvisor。"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:1012
+#: htdocs/luci-static/resources/view/homeproxy/client.js:1011
 msgid "Binary file"
 msgstr "二进制文件"
 
@@ -1925,7 +1925,7 @@ msgstr "Socks5"
 msgid "Source IP CIDR"
 msgstr "源 IP CIDR"
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:1011
+#: htdocs/luci-static/resources/view/homeproxy/client.js:1012
 msgid "Source file"
 msgstr "源文件"
 

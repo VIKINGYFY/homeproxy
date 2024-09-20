@@ -221,7 +221,7 @@ msgstr ""
 msgid "Based on google/gvisor."
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:1012
+#: htdocs/luci-static/resources/view/homeproxy/client.js:1011
 msgid "Binary file"
 msgstr ""
 
@@ -1896,7 +1896,7 @@ msgstr ""
 msgid "Source IP CIDR"
 msgstr ""
 
-#: htdocs/luci-static/resources/view/homeproxy/client.js:1011
+#: htdocs/luci-static/resources/view/homeproxy/client.js:1012
 msgid "Source file"
 msgstr ""
 
