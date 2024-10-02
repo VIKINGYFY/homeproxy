@@ -12,7 +12,7 @@ msgstr ""
 msgid "%s log"
 msgstr "%s 日志"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1409
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1412
 msgid "%s nodes removed"
 msgstr "移除了 %s 个节点"
 
@@ -109,7 +109,7 @@ msgid "All ports"
 msgstr "所有端口"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:982
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1335
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1338
 msgid "Allow insecure"
 msgstr "允许不安全连接"
 
@@ -117,7 +117,7 @@ msgstr "允许不安全连接"
 msgid "Allow insecure connection at TLS client."
 msgstr "允许 TLS 客户端侧的不安全连接。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1336
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1339
 msgid "Allow insecure connection by default when add nodes from subscriptions."
 msgstr "从订阅获取节点时，默认允许不安全连接。"
 
@@ -147,7 +147,7 @@ msgstr "替代 HTTP 端口"
 msgid "Alternative TLS port"
 msgstr "替代 HTTPS 端口"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1372
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1375
 msgid "An error occurred during updating subscriptions: %s"
 msgstr "更新订阅时发生错误：%s"
 
@@ -442,7 +442,7 @@ msgstr "默认域名解析策略。"
 msgid "Default outbound"
 msgstr "默认出站"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1343
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1346
 msgid "Default packet encoding"
 msgstr "默认包封装格式"
 
@@ -1356,7 +1356,7 @@ msgstr "多路复用协议。"
 msgid "NOT RUNNING"
 msgstr "未运行"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1349
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1352
 msgid "NOTE: Save current settings before updating subscriptions."
 msgstr "注意：更新订阅前先保存当前配置。"
 
@@ -1390,11 +1390,11 @@ msgstr "无 TCP 传输层, 纯 HTTP 已合并到 HTTP 传输层。"
 msgid "No additional encryption support: It's basically duplicate encryption."
 msgstr "无额外加密支持：它基本上是重复加密。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1365
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1368
 msgid "No subscription available"
 msgstr "无可用订阅"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1390
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1393
 msgid "No subscription node"
 msgstr "无订阅节点"
 
@@ -1743,11 +1743,11 @@ msgstr "区域 ID"
 msgid "Remote"
 msgstr "远程"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1387
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1390
 msgid "Remove %s nodes"
 msgstr "移除 %s 个节点"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1377
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1380
 msgid "Remove all nodes from subscriptions"
 msgstr "移除所有订阅节点"
 
@@ -1846,11 +1846,11 @@ msgstr "Salamander"
 msgid "Same as main node"
 msgstr "保持与主节点一致"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1351
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1354
 msgid "Save current settings"
 msgstr "保存当前设置"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1348
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1351
 msgid "Save subscriptions settings"
 msgstr "保存订阅设置"
 
@@ -2256,7 +2256,7 @@ msgstr ""
 "检测到任何活动，则会关闭连接。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:985
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1338
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1341
 msgid ""
 "This is <strong>DANGEROUS</strong>, your traffic is almost like "
 "<strong>PLAIN TEXT</strong>! Use at your own risk!"
@@ -2368,7 +2368,7 @@ msgstr "未知错误：%s"
 msgid "Unsupported fingerprint!"
 msgstr "不支持的指纹！"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1362
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1365
 msgid "Update %s subscriptions"
 msgstr "更新 %s 个订阅"
 
@@ -2384,7 +2384,7 @@ msgstr "更新间隔"
 msgid "Update interval of rule set.<br/><code>1d</code> will be used if empty."
 msgstr "规则集更新间隔。<br/>留空使用 <code>1d</code>。"
 
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1357
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1360
 msgid "Update nodes from subscriptions"
 msgstr "从订阅更新节点"
 
@@ -2436,6 +2436,10 @@ msgstr "用于验证返回证书上的主机名。如允许不安全连接，此
 #: htdocs/luci-static/resources/view/homeproxy/client.js:895
 msgid "User"
 msgstr "用户"
+
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1335
+msgid "User-Agent"
+msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:423
 #: htdocs/luci-static/resources/view/homeproxy/server.js:171
@@ -2491,7 +2495,7 @@ msgid "Write proxy protocol in the connection header."
 msgstr "在连接头中写入代理协议。"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:828
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1346
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1349
 msgid "Xudp (Xray-core)"
 msgstr "Xudp (Xray-core)"
 
@@ -2557,12 +2561,12 @@ msgstr "非空值"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:567
 #: htdocs/luci-static/resources/view/homeproxy/node.js:826
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1344
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1347
 msgid "none"
 msgstr "无"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:827
-#: htdocs/luci-static/resources/view/homeproxy/node.js:1345
+#: htdocs/luci-static/resources/view/homeproxy/node.js:1348
 msgid "packet addr (v2ray-core v5+)"
 msgstr "packet addr (v2ray-core v5+)"
 
