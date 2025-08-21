@@ -1340,7 +1340,6 @@ return view.extend({
 		o.default = '0 */6 * * *';
 		o.placeholder = '0 */6 * * *';
 		o.rmempty = false;
-		o.retain = true;
 
 		o = s.taboption('subscription', form.Flag, 'update_via_proxy', _('Update via proxy'),
 			_('Update subscriptions via proxy.'));
