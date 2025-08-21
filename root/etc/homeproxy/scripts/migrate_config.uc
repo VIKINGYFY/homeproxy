@@ -114,11 +114,10 @@ uci.foreach(uciconfig, ucidnsrule, (cfg) => {
 	if (cfg.server === 'block-dns') {
 		uci.set(uciconfig, cfg['.name'], 'action', 'reject');
 		uci.delete(uciconfig, cfg['.name'], 'server');
-	}
-
-	/* add missing 'action' field */
-	if (!cfg.action)
+	} else if (!cfg.action) {
+		/* add missing 'action' field */
 		uci.set(uciconfig, cfg['.name'], 'action', 'route');
+	}
 });
 
 /* nodes options */
@@ -137,6 +136,15 @@ uci.foreach(uciconfig, uciroutingrule, (cfg) => {
 	/* rule_set_ipcidr_match_source was renamed in sb 1.10 */
 	if (cfg.rule_set_ipcidr_match_source === '1')
 		uci.rename(uciconfig, cfg['.name'], 'rule_set_ipcidr_match_source', 'rule_set_ip_cidr_match_source');
+
+	/* block-out was moved into action in sb 1.11 */
+	if (cfg.outbound === 'block-out') {
+		uci.set(uciconfig, cfg['.name'], 'action', 'reject');
+		uci.delete(uciconfig, cfg['.name'], 'outbound');
+	} else if (!cfg.action) {
+		/* add missing 'action' field */
+		uci.set(uciconfig, cfg['.name'], 'action', 'route');
+	}
 });
 
 /* server options */
