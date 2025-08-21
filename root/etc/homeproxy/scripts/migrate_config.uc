@@ -70,11 +70,55 @@ if (uci.get(uciconfig, ucimain, 'routing_port') === 'all')
 if (uci.get(uciconfig, 'experimental'))
 	uci.delete(uciconfig, 'experimental');
 
+/* block-dns was removed from built-in dns servers */
+if (uci.get(uciconfig, ucidns, 'default_server') === 'block-dns') {
+	/* append a rule at last to block all DNS queries */
+	uci.set(uciconfig, '_migration_dns_final_block', ucidnsrule);
+	uci.set(uciconfig, '_migration_dns_final_block', 'label', 'migration_final_block_dns');
+	uci.set(uciconfig, '_migration_dns_final_block', 'enabled', '1');
+	uci.set(uciconfig, '_migration_dns_final_block', 'mode', 'default');
+	uci.set(uciconfig, '_migration_dns_final_block', 'action', 'reject');
+	uci.set(uciconfig, ucidns, 'default_server', 'default-dns');
+}
+
 /* DNS rules options */
 uci.foreach(uciconfig, ucidnsrule, (cfg) => {
+	/* outbound was removed in sb 1.12 */
+	if (cfg.outbound) {
+		uci.delete(uciconfig, cfg['.name']);
+		if (!cfg.enabled)
+			return;
+
+		map(cfg.outbound, (outbound) => {
+			switch (outbound) {
+			case 'direct-out':
+			case 'block-out':
+				break;
+			case 'any-out':
+				uci.set(uciconfig, ucirouting, 'default_outbound_dns', cfg.server);
+				break;
+			default:
+				uci.set(uciconfig, cfg.outbound, 'domain_resolver', cfg.server);
+				break;
+			}
+		});
+
+		return;
+	}
+
 	/* rule_set_ipcidr_match_source was renamed in sb 1.10 */
 	if (cfg.rule_set_ipcidr_match_source === '1')
 		uci.rename(uciconfig, cfg['.name'], 'rule_set_ipcidr_match_source', 'rule_set_ip_cidr_match_source');
+
+	/* block-dns was moved into action in sb 1.11 */
+	if (cfg.server === 'block-dns') {
+		uci.set(uciconfig, cfg['.name'], 'action', 'reject');
+		uci.delete(uciconfig, cfg['.name'], 'server');
+	}
+
+	/* add missing 'action' field */
+	if (!cfg.action)
+		uci.set(uciconfig, cfg['.name'], 'action', 'route');
 });
 
 /* nodes options */

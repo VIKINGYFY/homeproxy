@@ -108,7 +108,7 @@ function parse_uri(uri) {
 
 			config = {
 				label: url.hash ? urldecode(url.hash) : null,
-				type: 'anytls';
+				type: 'anytls',
 				address: url.hostname,
 				port: url.port,
 				password: urldecode(url.username),
@@ -116,6 +116,8 @@ function parse_uri(uri) {
 				tls_sni: params.sni,
 				tls_insecure: (params.insecure === '1') ? '1' : '0'
 			};
+
+			break;
 		case 'http':
 		case 'https':
 			url = parseURL('http://' + uri[1]) || {};
