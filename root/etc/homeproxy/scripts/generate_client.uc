@@ -13,9 +13,8 @@ import { connect } from 'ubus';
 import { cursor } from 'uci';
 
 import {
-	isEmpty, strToBool, strToInt,
-	removeBlankAttrs, validation,
-	HP_DIR, RUN_DIR
+	isEmpty, parseURL, strToBool, strToInt, strToTime,
+	removeBlankAttrs, validation, HP_DIR, RUN_DIR
 } from 'homeproxy';
 
 const ubus = connect();
@@ -73,6 +72,7 @@ if (routing_mode !== 'custom') {
 		if (isEmpty(china_dns_server) || type(china_dns_server) !== 'string' || china_dns_server === 'wan')
 			china_dns_server = wan_dns;
 	}
+	dns_default_strategy = (ipv6_support !== '1') ? 'ipv4_only' : null;
 
 	direct_domain_list = trim(readfile(HP_DIR + '/resources/direct_list.txt'));
 	if (direct_domain_list)
@@ -145,6 +145,22 @@ function parse_port(strport) {
 
 }
 
+function parse_dnserver(server_addr, default_protocol) {
+	if (isEmpty(server_addr))
+		return null;
+
+	if (!match(server_addr, /:\/\//))
+		server_addr = (default_protocol || 'udp') + '://' + server_addr;
+	server_addr = parseURL(server_addr);
+
+	return {
+		type: server_addr.protocol,
+		server: server_addr.hostname,
+		server_port: strToInt(server_addr.port),
+		path: (server_addr.pathname !== '/') ? server_addr.pathname : null,
+	}
+}
+
 function parse_dnsquery(strquery) {
 	if (type(strquery) !== 'array' || isEmpty(strquery))
 		return null;
@@ -213,11 +229,11 @@ function generate_outbound(node) {
 		override_port: strToInt(node.override_port),
 		proxy_protocol: strToInt(node.proxy_protocol),
 		/* AnyTLS */
-		idle_session_check_interval: node.anytls_idle_session_check_interval ? (node.anytls_idle_session_check_interval + 's') : null,
-		idle_session_timeout: node.anytls_idle_session_timeout ? (node.anytls_idle_session_timeout + 's') : null,
+		idle_session_check_interval: strToTime(node.anytls_idle_session_check_interval),
+		idle_session_timeout: strToTime(node.anytls_idle_session_timeout),
 		min_idle_session: strToInt(node.anytls_min_idle_session),
 		/* Hysteria (2) */
-		hop_interval: node.hysteria_hop_interval ? (node.hysteria_hop_interval + 's') : null,
+		hop_interval: strToTime(node.hysteria_hop_interval),
 		up_mbps: strToInt(node.hysteria_up_mbps),
 		down_mbps: strToInt(node.hysteria_down_mbps),
 		obfs: node.hysteria_obfs_type ? {
@@ -247,13 +263,13 @@ function generate_outbound(node) {
 		udp_relay_mode: node.tuic_udp_relay_mode,
 		udp_over_stream: strToBool(node.tuic_udp_over_stream),
 		zero_rtt_handshake: strToBool(node.tuic_enable_zero_rtt),
-		heartbeat: node.tuic_heartbeat ? (node.tuic_heartbeat + 's') : null,
+		heartbeat: strToTime(node.tuic_heartbeat),
 		/* VLESS / VMess */
 		flow: node.vless_flow,
 		alter_id: strToInt(node.vmess_alterid),
 		security: node.vmess_encrypt,
-		global_padding: node.vmess_global_padding ? (node.vmess_global_padding === '1') : null,
-		authenticated_length: node.vmess_authenticated_length ? (node.vmess_authenticated_length === '1') : null,
+		global_padding: strToBool(node.vmess_global_padding),
+		authenticated_length: strToBool(node.vmess_authenticated_length),
 		packet_encoding: node.packet_encoding,
 
 		multiplex: (node.multiplex === '1') ? {
@@ -262,7 +278,7 @@ function generate_outbound(node) {
 			max_connections: strToInt(node.multiplex_max_connections),
 			min_streams: strToInt(node.multiplex_min_streams),
 			max_streams: strToInt(node.multiplex_max_streams),
-			padding: (node.multiplex_padding === '1'),
+			padding: strToBool(node.multiplex_padding),
 			brutal: (node.multiplex_brutal === '1') ? {
 				enabled: true,
 				up_mbps: strToInt(node.multiplex_brutal_up),
@@ -272,7 +288,7 @@ function generate_outbound(node) {
 		tls: (node.tls === '1') ? {
 			enabled: true,
 			server_name: node.tls_sni,
-			insecure: (node.tls_insecure === '1'),
+			insecure: strToBool(node.tls_insecure),
 			alpn: node.tls_alpn,
 			min_version: node.tls_min_version,
 			max_version: node.tls_max_version,
@@ -280,7 +296,7 @@ function generate_outbound(node) {
 			certificate_path: node.tls_cert_path,
 			ech: (node.tls_ech === '1') ? {
 				enabled: true,
-				pq_signature_schemes_enabled: (node.tls_ech_enable_pqss === '1'),
+				pq_signature_schemes_enabled: strToBool(node.tls_ech_enable_pqss),
 				config: node.tls_ech_config,
 				config_path: node.tls_ech_config_path
 			} : null,
@@ -305,8 +321,8 @@ function generate_outbound(node) {
 			max_early_data: strToInt(node.websocket_early_data),
 			early_data_header_name: node.websocket_early_data_header,
 			service_name: node.grpc_servicename,
-			idle_timeout: node.http_idle_timeout ? (node.http_idle_timeout + 's') : null,
-			ping_timeout: node.http_ping_timeout ? (node.http_ping_timeout + 's') : null,
+			idle_timeout: (node.http_idle_timeout),
+			ping_timeout: (node.http_ping_timeout),
 			permit_without_stream: strToBool(node.grpc_permit_without_stream)
 		} : null,
 		udp_over_tcp: (node.udp_over_tcp === '1') ? {
@@ -410,9 +426,9 @@ config.dns = {
 	],
 	rules: [],
 	strategy: dns_default_strategy,
-	disable_cache: (dns_disable_cache === '1'),
-	disable_expire: (dns_disable_cache_expire === '1'),
-	independent_cache: (dns_independent_cache === '1'),
+	disable_cache: strToBool(dns_disable_cache),
+	disable_expire: strToBool(dns_disable_cache_expire),
+	independent_cache: strToBool(dns_independent_cache),
 	client_subnet: dns_client_subnet
 };
 
@@ -420,11 +436,12 @@ if (!isEmpty(main_node)) {
 	/* Main DNS */
 	push(config.dns.servers, {
 		tag: 'main-dns',
-		address: !match(dns_server, /:\/\//) ? 'tcp://' + (validation('ip6addr', dns_server) ? `[${dns_server}]` : dns_server) : dns_server,
-		strategy: (ipv6_support !== '1') ? 'ipv4_only' : null,
-		address_resolver: 'default-dns',
-		address_strategy: (ipv6_support !== '1') ? 'ipv4_only' : null,
-		detour: 'main-out'
+		domain_resolver: {
+			server: 'default-dns',
+			strategy: (ipv6_support !== '1') ? 'ipv4_only' : null
+		},
+		detour: 'main-out',
+		...parse_dnserver(dns_server, 'tcp')
 	});
 	config.dns.final = 'main-dns';
 
@@ -446,9 +463,12 @@ if (!isEmpty(main_node)) {
 	if (routing_mode === 'bypass_mainland_china') {
 		push(config.dns.servers, {
 			tag: 'china-dns',
-			address: china_dns_server,
-			address_resolver: 'default-dns',
-			detour: 'direct-out'
+			address_resolver: {
+				server: 'default-dns',
+				strategy: 'prefer_ipv6'
+			},
+			detour: 'direct-out',
+			...parse_dnserver(china_dns_server)
 		});
 
 		if (length(proxy_domain_list))
@@ -461,7 +481,8 @@ if (!isEmpty(main_node)) {
 		push(config.dns.rules, {
 			rule_set: 'geosite-cn',
 			action: 'route',
-			server: 'china-dns'
+			server: 'china-dns',
+			strategy: 'prefer_ipv6'
 		});
 		push(config.dns.rules, {
 			type: 'logical',
@@ -476,7 +497,8 @@ if (!isEmpty(main_node)) {
 				}
 			],
 			action: 'route',
-			server: 'china-dns'
+			server: 'china-dns',
+			strategy: 'prefer_ipv6'
 		});
 	}
 } else if (!isEmpty(default_outbound)) {
@@ -487,13 +509,20 @@ if (!isEmpty(main_node)) {
 
 		push(config.dns.servers, {
 			tag: 'cfg-' + cfg['.name'] + '-dns',
-			address: cfg.address,
-			address: cfg.address,
-			address_resolver: get_resolver(cfg.address_resolver),
-			address_strategy: cfg.address_strategy,
-			strategy: cfg.resolve_strategy,
-			detour: get_outbound(cfg.outbound),
-			client_subnet: cfg.client_subnet
+			type: cfg.type,
+			server: cfg.server,
+			server_port: strToInt(cfg.server_port),
+			path: cfg.path,
+			headers: cfg.headers,
+			tls: cfg.tls_sni ? {
+				enabled: true,
+				server_name: cfg.tls_sni
+			} : null,
+			domain_resolver: {
+				server: get_resolver(cfg.address_resolver),
+				strategy: cfg.address_strategy
+			},
+			detour: get_outbound(cfg.outbound)
 		});
 	});
 
@@ -514,9 +543,9 @@ if (!isEmpty(main_node)) {
 			port: parse_port(cfg.port),
 			port_range: cfg.port_range,
 			source_ip_cidr: cfg.source_ip_cidr,
-			source_ip_is_private: (cfg.source_ip_is_private === '1') || null,
+			source_ip_is_private: strToBool(cfg.source_ip_is_private),
 			ip_cidr: cfg.ip_cidr,
-			ip_is_private: (cfg.ip_is_private === '1') || null,
+			ip_is_private: strToBool(cfg.ip_is_private),
 			source_port: parse_port(cfg.source_port),
 			source_port_range: cfg.source_port_range,
 			process_name: cfg.process_name,
@@ -524,16 +553,17 @@ if (!isEmpty(main_node)) {
 			process_path_regex: cfg.process_path_regex,
 			user: cfg.user,
 			rule_set: get_ruleset(cfg.rule_set),
-			rule_set_ip_cidr_match_source: (cfg.rule_set_ip_cidr_match_source  === '1') || null,
-			invert: (cfg.invert === '1') || null,
+			rule_set_ip_cidr_match_source: strToBool(cfg.rule_set_ip_cidr_match_source),
+			invert: strToBool(cfg.invert),
 			outbound: get_outbound(cfg.outbound),
 			action: cfg.action,
 			server: get_resolver(cfg.server),
-			disable_cache: (cfg.dns_disable_cache === '1') || null,
+			strategy: cfg.domain_strategy,
+			disable_cache: strToBool(cfg.dns_disable_cache),
 			rewrite_ttl: strToInt(cfg.rewrite_ttl),
 			client_subnet: cfg.client_subnet,
 			method: cfg.reject_method,
-			no_drop: (cfg.reject_no_drop === '1') || null,
+			no_drop: strToBool(cfg.reject_no_drop),
 			rcode: cfg.predefined_rcode,
 			answer: cfg.predefined_answer,
 			ns: cfg.predefined_ns,
@@ -563,9 +593,9 @@ push(config.inbounds, {
 	tag: 'mixed-in',
 	listen: '::',
 	listen_port: int(mixed_port),
-	udp_timeout: udp_timeout ? (udp_timeout + 's') : null,
+	udp_timeout: strToTime(udp_timeout),
 	sniff: true,
-	sniff_override_destination: (sniff_override === '1'),
+	sniff_override_destination: strToBool(sniff_override),
 	set_system_proxy: false
 });
 
@@ -577,7 +607,7 @@ if (match(proxy_mode, /redirect/))
 		listen: '::',
 		listen_port: int(redirect_port),
 		sniff: true,
-		sniff_override_destination: (sniff_override === '1')
+		sniff_override_destination: strToBool(sniff_override)
 	});
 if (match(proxy_mode, /tproxy/))
 	push(config.inbounds, {
@@ -587,9 +617,9 @@ if (match(proxy_mode, /tproxy/))
 		listen: '::',
 		listen_port: int(tproxy_port),
 		network: 'udp',
-		udp_timeout: udp_timeout ? (udp_timeout + 's') : null,
+		udp_timeout: strToTime(udp_timeout),
 		sniff: true,
-		sniff_override_destination: (sniff_override === '1')
+		sniff_override_destination: strToBool(sniff_override)
 	});
 if (match(proxy_mode, /tun/))
 	push(config.inbounds, {
@@ -601,10 +631,10 @@ if (match(proxy_mode, /tun/))
 		mtu: strToInt(tun_mtu),
 		auto_route: false,
 		endpoint_independent_nat: strToBool(endpoint_independent_nat),
-		udp_timeout: udp_timeout ? (udp_timeout + 's') : null,
+		udp_timeout: strToTime(udp_timeout),
 		stack: tcpip_stack,
 		sniff: true,
-		sniff_override_destination: (sniff_override === '1')
+		sniff_override_destination: strToBool(sniff_override)
 	});
 /* Inbound end */
 
@@ -637,7 +667,7 @@ if (!isEmpty(main_node)) {
 			type: 'urltest',
 			tag: 'main-out',
 			outbounds: map(main_urltest_nodes, (k) => `cfg-${k}-out`),
-			interval: main_urltest_interval ? (main_urltest_interval + 's') : null,
+			interval: strToTime(main_urltest_interval),
 			tolerance: strToInt(main_urltest_tolerance),
 			idle_timeout: (strToInt(main_urltest_interval) > 1800) ? `${main_urltest_interval * 2}s` : null,
 		});
@@ -662,7 +692,7 @@ if (!isEmpty(main_node)) {
 			type: 'urltest',
 			tag: 'main-udp-out',
 			outbounds: map(main_udp_urltest_nodes, (k) => `cfg-${k}-out`),
-			interval: main_udp_urltest_interval ? (main_udp_urltest_interval + 's') : null,
+			interval: strToTime(main_udp_urltest_interval),
 			tolerance: strToInt(main_udp_urltest_tolerance),
 			idle_timeout: (strToInt(main_udp_urltest_interval) > 1800) ? `${main_udp_urltest_interval * 2}s` : null,
 		});
@@ -702,10 +732,10 @@ if (!isEmpty(main_node)) {
 				tag: 'cfg-' + cfg['.name'] + '-out',
 				outbounds: map(cfg.urltest_nodes, (k) => `cfg-${k}-out`),
 				url: cfg.urltest_url,
-				interval: cfg.urltest_interval ? (cfg.urltest_interval + 's') : null,
+				interval: strToTime(cfg.urltest_interval),
 				tolerance: strToInt(cfg.urltest_tolerance),
-				idle_timeout: cfg.urltest_idle_timeout ? (cfg.urltest_idle_timeout + 's') : null,
-				interrupt_exist_connections: (cfg.urltest_interrupt_exist_connections === '1')
+				idle_timeout: strToTime(cfg.urltest_idle_timeout),
+				interrupt_exist_connections: strToBool(cfg.urltest_interrupt_exist_connections)
 			});
 			urltest_nodes = [...urltest_nodes, ...filter(cfg.urltest_nodes, (l) => !~index(urltest_nodes, l))];
 		} else {
@@ -867,9 +897,9 @@ if (!isEmpty(main_node)) {
 			domain_keyword: cfg.domain_keyword,
 			domain_regex: cfg.domain_regex,
 			source_ip_cidr: cfg.source_ip_cidr,
-			source_ip_is_private: (cfg.source_ip_is_private === '1') || null,
+			source_ip_is_private: strToBool(cfg.source_ip_is_private),
 			ip_cidr: cfg.ip_cidr,
-			ip_is_private: (cfg.ip_is_private === '1') || null,
+			ip_is_private: strToBool(cfg.ip_is_private),
 			source_port: parse_port(cfg.source_port),
 			source_port_range: cfg.source_port_range,
 			port: parse_port(cfg.port),
@@ -879,19 +909,19 @@ if (!isEmpty(main_node)) {
 			process_path_regex: cfg.process_path_regex,
 			user: cfg.user,
 			rule_set: get_ruleset(cfg.rule_set),
-			rule_set_ip_cidr_match_source: (cfg.rule_set_ip_cidr_match_source  === '1') || null,
-			rule_set_ip_cidr_accept_empty: (cfg.rule_set_ip_cidr_accept_empty === '1') || null,
-			invert: (cfg.invert === '1') || null,
+			rule_set_ip_cidr_match_source: strToBool(cfg.rule_set_ip_cidr_match_source),
+			rule_set_ip_cidr_accept_empty: strToBool(cfg.rule_set_ip_cidr_accept_empty),
+			invert: strToBool(cfg.invert),
 			action: cfg.action,
 			outbound: get_outbound(cfg.outbound),
 			override_address: cfg.override_address,
 			override_port: strToInt(cfg.override_port),
-			udp_disable_domain_unmapping: (cfg.udp_disable_domain_unmapping === '1') || null,
-			udp_connect: (cfg.udp_connect === '1') || null,
-			udp_timeout: cfg.udp_timeout ? (cfg.udp_timeout + 's') : null,
-			tls_fragment: (cfg.tls_fragment === '1') || null,
-			tls_fragment_fallback_delay: cfg.tls_fragment_fallback_delay ? (cfg.tls_fragment_fallback_delay + 's') : null,
-			tls_record_fragment: (cfg.tls_record_fragment === '1') || null
+			udp_disable_domain_unmapping: strToBool(cfg.udp_disable_domain_unmapping),
+			udp_connect: strToBool(cfg.udp_connect),
+			udp_timeout: strToTime(cfg.udp_timeout),
+			tls_fragment: strToBool(cfg.tls_fragment),
+			tls_fragment_fallback_delay: strToTime(cfg.tls_fragment_fallback_delay),
+			tls_record_fragment: strToBool(cfg.tls_record_fragment)
 		});
 	});
 
@@ -921,8 +951,8 @@ if (routing_mode in ['bypass_mainland_china', 'custom']) {
 		cache_file: {
 			enabled: true,
 			path: RUN_DIR + '/cache.db',
-			store_rdrc: (cache_file_store_rdrc === '1') || null,
-			rdrc_timeout: cache_file_rdrc_timeout ? (cache_file_rdrc_timeout + 's') : null,
+			store_rdrc: strToBool(cache_file_store_rdrc),
+			rdrc_timeout: strToTime(cache_file_rdrc_timeout),
 		}
 	};
 }
