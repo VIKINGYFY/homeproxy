@@ -52,6 +52,8 @@ const dns_port = uci.get(uciconfig, uciinfra, 'dns_port') || '5333';
 
 const ntp_server = uci.get(uciconfig, uciinfra, 'ntp_server') || 'time.apple.com';
 
+const ipv6_support = uci.get(uciconfig, ucimain, 'ipv6_support') || '0';
+
 let main_node, main_udp_node, dedicated_udp_node, default_outbound, default_outbound_dns,
     domain_strategy, sniff_override, dns_server, china_dns_server, dns_default_strategy,
     dns_default_server, dns_disable_cache, dns_disable_cache_expire, dns_independent_cache,
@@ -102,16 +104,19 @@ if (routing_mode !== 'custom') {
 }
 
 const proxy_mode = uci.get(uciconfig, ucimain, 'proxy_mode') || 'redirect_tproxy',
-      ipv6_support = uci.get(uciconfig, ucimain, 'ipv6_support') || '0',
       default_interface = uci.get(uciconfig, ucicontrol, 'bind_interface');
 
 const mixed_port = uci.get(uciconfig, uciinfra, 'mixed_port') || '5330';
-let self_mark, redirect_port, tproxy_port,
-    tun_name, tun_addr4, tun_addr6, tun_mtu,
-    tcpip_stack, endpoint_independent_nat, udp_timeout;
-udp_timeout = uci.get(uciconfig, 'infra', 'udp_timeout');
+
+let self_mark, redirect_port, tproxy_port, tun_name,
+    tun_addr4, tun_addr6, tun_mtu, tcpip_stack,
+    endpoint_independent_nat, udp_timeout;
+
 if (routing_mode === 'custom')
 	udp_timeout = uci.get(uciconfig, uciroutingsetting, 'udp_timeout');
+else
+	udp_timeout = uci.get(uciconfig, 'infra', 'udp_timeout');
+
 if (match(proxy_mode, /redirect/)) {
 	self_mark = uci.get(uciconfig, 'infra', 'self_mark') || '100';
 	redirect_port = uci.get(uciconfig, 'infra', 'redirect_port') || '5331';
@@ -463,7 +468,7 @@ if (!isEmpty(main_node)) {
 	if (routing_mode === 'bypass_mainland_china') {
 		push(config.dns.servers, {
 			tag: 'china-dns',
-			address_resolver: {
+			domain_resolver: {
 				server: 'default-dns',
 				strategy: 'prefer_ipv6'
 			},
@@ -744,18 +749,20 @@ if (!isEmpty(main_node)) {
 				push(config.endpoints, generate_endpoint(outbound));
 				config.endpoints[length(config.endpoints)-1].bind_interface = cfg.bind_interface;
 				config.endpoints[length(config.endpoints)-1].detour = get_outbound(cfg.outbound);
-				if (cfg.domain_resolver || cfg.domain_strategy) {
-					config.endpoints[length(config.endpoints)-1].domain_resolver = get_resolver(cfg.domain_resolver || default_outbound_dns);
-					config.endpoints[length(config.endpoints)-1].domain_strategy = cfg.domain_strategy;
-				}
+				if (cfg.domain_resolver || cfg.domain_strategy)
+					config.endpoints[length(config.endpoints)-1].domain_resolver = {
+						server: get_resolver(cfg.domain_resolver || default_outbound_dns),
+						strategy: cfg.domain_strategy
+					};
 			} else {
 				push(config.outbounds, generate_outbound(outbound));
 				config.outbounds[length(config.outbounds)-1].bind_interface = cfg.bind_interface;
 				config.outbounds[length(config.outbounds)-1].detour = get_outbound(cfg.outbound);
-				if (cfg.domain_resolver || cfg.domain_strategy) {
-					config.outbounds[length(config.outbounds)-1].domain_resolver = get_resolver(cfg.domain_resolver || default_outbound_dns);
-					config.outbounds[length(config.outbounds)-1].domain_strategy = cfg.domain_strategy;
-				}
+				if (cfg.domain_resolver || cfg.domain_strategy)
+					config.outbounds[length(config.outbounds)-1].domain_resolver = {
+						server: get_resolver(cfg.domain_resolver || default_outbound_dns),
+						strategy: cfg.domain_strategy
+					};
 			}
 			push(routing_nodes, cfg.node);
 		}
