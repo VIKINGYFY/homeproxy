@@ -1131,6 +1131,7 @@ costco.com
 cotweet.com
 counter.social
 coursehero.com
+covenantswatch.org.tw
 coze.com
 cpj.org
 cpu-monkey.com
@@ -1851,6 +1852,8 @@ ftvnews.com.tw
 ftx.com
 fucd.com
 fuchsia.dev
+fuckccp.com
+fuckccp.xyz
 fuckgfw.org
 fulione.com
 fullerconsideration.com
