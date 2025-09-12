@@ -71,7 +71,7 @@ msgstr "操作"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:185
 msgid "AdGuard Public DNS (DoH)"
-msgstr ""
+msgstr "AdGuard 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:1052
 msgid "Add a DNS rule"
@@ -120,11 +120,11 @@ msgstr "地址解析策略"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:650
 msgid "AliYun"
-msgstr ""
+msgstr "AliYun"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:221
 msgid "AliYun Public DNS (DoH)"
-msgstr ""
+msgstr "阿里 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:264
 msgid "All ports"
@@ -361,7 +361,7 @@ msgstr "密码套件"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:187
 msgid "Cisco Public DNS (DoH)"
-msgstr ""
+msgstr "Cisco 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/status.js:213
 msgid "Clean log"
@@ -381,11 +381,11 @@ msgstr "客户端版本"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:651
 msgid "CloudFlare"
-msgstr ""
+msgstr "CloudFlare"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:182
 msgid "CloudFlare Public DNS (DoH)"
-msgstr ""
+msgstr "CloudFlare 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:114
 #: htdocs/luci-static/resources/view/homeproxy/server.js:122
@@ -408,7 +408,7 @@ msgstr "连接检查"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1333
 msgid "Cron expression"
-msgstr ""
+msgstr "定时任务表达式"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:253
 msgid "Custom routing"
@@ -446,7 +446,7 @@ msgstr "DNS 服务器"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:186
 msgid "DNS.SB Public DNS (DoH)"
-msgstr ""
+msgstr "DNS.SB 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:645
 msgid "DNS01 challenge"
@@ -991,7 +991,7 @@ msgstr "谷歌"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:183
 msgid "Google Public DNS (DoH)"
-msgstr ""
+msgstr "Google 公共DNS (DoH)"
 
 #: root/usr/share/rpcd/acl.d/luci-app-homeproxy.json:3
 msgid "Grant access to homeproxy configuration"
@@ -1565,7 +1565,7 @@ msgstr "最小流数量"
 
 #: htdocs/luci-static/resources/view/homeproxy/node.js:1334
 msgid "Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)"
-msgstr ""
+msgstr "分(0-59) 时(0-23) 日(1-31) 月(1-12) 周(0-6)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:308
 #: htdocs/luci-static/resources/view/homeproxy/server.js:163
@@ -1942,7 +1942,7 @@ msgstr "QUIC 流接收窗口"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:184
 msgid "Quad9 Public DNS (DoH)"
-msgstr ""
+msgstr "Quad9 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:1091
 msgid "Query type"
@@ -2458,7 +2458,7 @@ msgstr "让客户端使用 BBR 流控算法。"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:220
 msgid "Tencent Public DNS (DoH)"
-msgstr ""
+msgstr "腾讯 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:508
 msgid "Test URL"
@@ -2696,7 +2696,7 @@ msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:219
 msgid "ThreatBook Public DNS (DoH)"
-msgstr ""
+msgstr "微步 公共DNS (DoH)"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:721
 msgid ""
@@ -3131,33 +3131,3 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:328
 msgid "valid uuid"
 msgstr "有效 uuid"
-
-#~ msgid "Alibaba Cloud DNS"
-#~ msgstr "阿里云 DNS"
-
-#~ msgid "Aliyun Public DNS (223.5.5.5)"
-#~ msgstr "阿里云公共 DNS（223.5.5.5）"
-
-#~ msgid "CNNIC Public DNS (210.2.4.8)"
-#~ msgstr "CNNIC 公共 DNS（210.2.4.8）"
-
-#~ msgid "Cisco Public DNS (208.67.222.222)"
-#~ msgstr "思科公共 DNS（208.67.222.222）"
-
-#~ msgid "CloudFlare Public DNS (1.1.1.1)"
-#~ msgstr "CloudFlare 公共 DNS（1.1.1.1）"
-
-#~ msgid "Cloudflare"
-#~ msgstr "Cloudflare"
-
-#~ msgid "Google Public DNS (8.8.8.8)"
-#~ msgstr "谷歌公共 DNS（8.8.8.8）"
-
-#~ msgid "Tencent Public DNS (119.29.29.29)"
-#~ msgstr "腾讯公共 DNS（119.29.29.29）"
-
-#~ msgid "ThreatBook Public DNS (117.50.10.10)"
-#~ msgstr "微步在线公共 DNS（117.50.10.10）"
-
-#~ msgid "Update time"
-#~ msgstr "更新时间"
