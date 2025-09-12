@@ -153,7 +153,7 @@ return view.extend({
 		o.value('urltest', _('URLTest'));
 		for (let i in proxy_nodes)
 			o.value(i, proxy_nodes[i]);
-		o.default = 'nil';
+		o.default = 'same';
 		o.depends({'routing_mode': /^((?!custom).)+$/, 'proxy_mode': /^((?!redirect$).)+$/});
 		o.rmempty = false;
 
@@ -179,14 +179,13 @@ return view.extend({
 		o = s.taboption('routing', form.Value, 'dns_server', _('DNS server'),
 			_('Support UDP, TCP, DoH, DoQ, DoT. TCP protocol will be used if not specified.'));
 		o.value('wan', _('WAN DNS (read from interface)'));
-		o.value('1.1.1.1', _('CloudFlare Public DNS (1.1.1.1)'));
-		o.value('208.67.222.222', _('Cisco Public DNS (208.67.222.222)'));
-		o.value('8.8.8.8', _('Google Public DNS (8.8.8.8)'));
-		o.value('', '---');
-		o.value('223.5.5.5', _('Aliyun Public DNS (223.5.5.5)'));
-		o.value('119.29.29.29', _('Tencent Public DNS (119.29.29.29)'));
-		o.value('117.50.10.10', _('ThreatBook Public DNS (117.50.10.10)'));
-		o.default = '8.8.8.8';
+		o.value('https://dns.cloudflare.com/dns-query', _('CloudFlare Public DNS (DoH)'));
+		o.value('https://dns.google/dns-query', _('Google Public DNS (DoH)'));
+		o.value('https://dns.quad9.net/dns-query', _('Quad9 Public DNS (DoH)'));
+		o.value('https://dns.adguard-dns.com/dns-query', _('AdGuard Public DNS (DoH)'));
+		o.value('https://dns.sb/dns-query', _('DNS.SB Public DNS (DoH)'));
+		o.value('https://dns.opendns.com/dns-query', _('Cisco Public DNS (DoH)'));
+		o.default = 'https://dns.quad9.net/dns-query';
 		o.rmempty = false;
 		o.depends({'routing_mode': 'custom', '!reverse': true});
 		o.validate = function(section_id, value) {
@@ -217,12 +216,11 @@ return view.extend({
 		o = s.taboption('routing', form.Value, 'china_dns_server', _('China DNS server'),
 			_('The dns server for resolving China domains. Support UDP, TCP, DoH, DoQ, DoT.'));
 		o.value('wan', _('WAN DNS (read from interface)'));
-		o.value('223.5.5.5', _('Aliyun Public DNS (223.5.5.5)'));
-		o.value('210.2.4.8', _('CNNIC Public DNS (210.2.4.8)'));
-		o.value('119.29.29.29', _('Tencent Public DNS (119.29.29.29)'));
-		o.value('117.50.10.10', _('ThreatBook Public DNS (117.50.10.10)'));
+		o.value('https://doh-pure.onedns.net/dns-query', _('ThreatBook Public DNS (DoH)'));
+		o.value('https://doh.pub/dns-query', _('Tencent Public DNS (DoH)'));
+		o.value('https://dns.alidns.com/dns-query', _('AliYun Public DNS (DoH)'));
 		o.depends('routing_mode', 'bypass_mainland_china');
-		o.default = '223.5.5.5';
+		o.default = 'https://dns.alidns.com/dns-query';
 		o.rmempty = false;
 		o.validate = function(section_id, value) {
 			if (section_id && !['wan'].includes(value)) {

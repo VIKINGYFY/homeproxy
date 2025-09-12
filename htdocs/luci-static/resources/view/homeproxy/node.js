@@ -1330,11 +1330,11 @@ return view.extend({
 			_('Auto update subscriptions and geodata.'));
 		o.rmempty = false;
 
-		o = s.taboption('subscription', form.ListValue, 'auto_update_time', _('Update time'));
-		for (let i = 0; i < 24; i++)
-			o.value(i, i + ':00');
-		o.default = '2';
-		o.depends('auto_update', '1');
+		o = s.taboption('subscription', form.Value, 'auto_update_time', _('Cron expression'),
+			_('Minutes(0-59) Hours(0-23) Dates(1-31) Months(1-12) Weeks(0-6)'));
+		o.default = '0 */6 * * *';
+		o.placeholder = '0 */6 * * *';
+		o.rmempty = false;
 
 		o = s.taboption('subscription', form.Flag, 'update_via_proxy', _('Update via proxy'),
 			_('Update subscriptions via proxy.'));

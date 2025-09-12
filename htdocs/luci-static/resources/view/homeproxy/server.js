@@ -647,10 +647,10 @@ return view.extend({
 			o.modalonly = true;
 
 			o = s.option(form.ListValue, 'tls_dns01_provider', _('DNS provider'));
-			o.value('alidns', _('Alibaba Cloud DNS'));
-			o.value('cloudflare', _('Cloudflare'));
+			o.value('alidns', _('AliYun'));
+			o.value('cfdns', _('CloudFlare'));
 			o.depends('tls_dns01_challenge', '1');
-			o.default = 'cloudflare';
+			o.default = 'cfdns';
 			o.rmempty = false;
 			o.modalonly = true;
 
@@ -670,7 +670,7 @@ return view.extend({
 			o.modalonly = true;
 
 			o = s.option(form.Value, 'tls_dns01_cf_api_token', _('API token'));
-			o.depends('tls_dns01_provider', 'cloudflare');
+			o.depends('tls_dns01_provider', 'cfdns');
 			o.rmempty = false;
 			o.modalonly = true;
 
