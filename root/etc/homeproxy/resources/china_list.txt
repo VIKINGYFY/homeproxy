@@ -6,6 +6,7 @@ a2.mzstatic.com
 a3.mzstatic.com
 a4.mzstatic.com
 a5.mzstatic.com
+activation-v2.kaspersky.com
 adcdownload.apple.com
 adcdownload.apple.com.akadns.net
 admob-cn.com
@@ -108,6 +109,7 @@ crashlyticsreports-pa.googleapis.com
 crl-lb.apple.com.akadns.net
 crl.apple.com
 crl.globalsign.net
+crl.kaspersky.com
 crl.pki.goog
 crls.pki.goog
 csi.gstatic.com
@@ -129,6 +131,26 @@ discussionschinese.apple.com
 dl.dell.com
 dl.google.com
 dl.l.google.com
+dnl-00.geo.kaspersky.com
+dnl-01.geo.kaspersky.com
+dnl-02.geo.kaspersky.com
+dnl-03.geo.kaspersky.com
+dnl-04.geo.kaspersky.com
+dnl-05.geo.kaspersky.com
+dnl-06.geo.kaspersky.com
+dnl-07.geo.kaspersky.com
+dnl-08.geo.kaspersky.com
+dnl-09.geo.kaspersky.com
+dnl-10.geo.kaspersky.com
+dnl-11.geo.kaspersky.com
+dnl-12.geo.kaspersky.com
+dnl-13.geo.kaspersky.com
+dnl-14.geo.kaspersky.com
+dnl-15.geo.kaspersky.com
+dnl-16.geo.kaspersky.com
+dnl-17.geo.kaspersky.com
+dnl-18.geo.kaspersky.com
+dnl-19.geo.kaspersky.com
 docs.microsoft.com
 doubleclick-cn.net
 doubleclick.net
@@ -263,6 +285,10 @@ itunesconnect.apple.com
 js-cdn.music.apple.com
 kc.kexinshe.com
 km.support.apple.com
+ksn-cinfo-geo.kaspersky-labs.com
+ksn-file-geo.kaspersky-labs.com
+ksn-url-geo.kaspersky-labs.com
+ksn-verdict-geo.kaspersky-labs.com
 l2-uberproxy.corp.google.com
 learn.microsoft.com
 logger-dev.corp.google.com
@@ -279,8 +305,6 @@ misc-assets.itunes.apple.com
 ml.cdn-apple.com
 monitoring.qpdp1.net
 moocs.unipus.cn
-msgr.dlservice.microsoft.com
-msgruser.dlservice.microsoft.com
 music.apple.com
 myapp.itunes.apple.com
 myvs.download.prss.microsoft.com
@@ -314,7 +338,27 @@ oscdn.origin-apple.com.akadns.net
 osxapps.itunes.apple.com
 osxapps.itunes.g.aaplimg.com
 p.cdn.persaas.dell.com
+p00.upd.kaspersky.com
+p01.upd.kaspersky.com
+p02.upd.kaspersky.com
+p03.upd.kaspersky.com
+p04.upd.kaspersky.com
+p05.upd.kaspersky.com
+p06.upd.kaspersky.com
+p07.upd.kaspersky.com
+p08.upd.kaspersky.com
+p09.upd.kaspersky.com
 p1-juejin.byteimg.com
+p10.upd.kaspersky.com
+p11.upd.kaspersky.com
+p12.upd.kaspersky.com
+p13.upd.kaspersky.com
+p14.upd.kaspersky.com
+p15.upd.kaspersky.com
+p16.upd.kaspersky.com
+p17.upd.kaspersky.com
+p18.upd.kaspersky.com
+p19.upd.kaspersky.com
 p2-juejin.byteimg.com
 p3-juejin.byteimg.com
 p3-novel.byteimg.com
@@ -345,7 +389,6 @@ proxyconfig.corp.google.com
 publicassets.cdn-apple.com
 qagpublic.qatp1.net
 qgadmin.qcpp1.net
-qh.dlservice.microsoft.com
 qiao-cn.com
 qpx.googleflights.net
 qualysapi.qatp1.net
@@ -369,7 +412,27 @@ res-1.cdn.office.net
 res.cdn.office.net
 reserve-prime.apple.com
 s.mzstatic.com
+s00.upd.kaspersky.com
+s01.upd.kaspersky.com
+s02.upd.kaspersky.com
+s03.upd.kaspersky.com
+s04.upd.kaspersky.com
+s05.upd.kaspersky.com
+s06.upd.kaspersky.com
+s07.upd.kaspersky.com
+s08.upd.kaspersky.com
+s09.upd.kaspersky.com
 s1.mzstatic.com
+s10.upd.kaspersky.com
+s11.upd.kaspersky.com
+s12.upd.kaspersky.com
+s13.upd.kaspersky.com
+s14.upd.kaspersky.com
+s15.upd.kaspersky.com
+s16.upd.kaspersky.com
+s17.upd.kaspersky.com
+s18.upd.kaspersky.com
+s19.upd.kaspersky.com
 s2.mzstatic.com
 s3.mzstatic.com
 s4.mzstatic.com
@@ -392,8 +455,6 @@ sh-pod2-smp-device.apple.com
 shazam-insights.cdn-apple.com
 shell.cdn.office.net
 si.cdn.dell.com
-silverlight.dlservice.microsoft.com
-slupdate.dlservice.microsoft.com
 sm.dell.com
 smp-device-content.apple.com
 snp.cdn.dell.com
@@ -473,7 +534,6 @@ weather-data.apple.com.akadns.net
 weather-map.apple.com
 weather-map2.apple.com
 weatherkit.apple.com
-wl.dlservice.microsoft.com
 wscont1.apps.microsoft.com
 wscont2.apps.microsoft.com
 www-csb.dell.com
@@ -493,7 +553,6 @@ www.recaptcha.net
 www.support.apple.com
 www.ztedevices.com
 www4-static.gog-statics.com
-xb.dlservice.microsoft.com
 xn--flw351e.com
 xp.apple.com
 xz.pphimalayanrt.com
@@ -7671,6 +7730,7 @@ xz.pphimalayanrt.com
 7-vk.com
 7-wx.com
 70.cc
+70.net
 700618.com
 70098.com
 700kan.cc
@@ -8643,6 +8703,7 @@ xz.pphimalayanrt.com
 88ht.com
 88hu.com
 88icon.com
+88ipa.com
 88j84.com
 88k.site
 88koo.com
@@ -8816,6 +8877,7 @@ xz.pphimalayanrt.com
 9000wy.com
 900112.com
 900501.xyz
+900cha.com
 900php.com
 900ppt.com
 900yi.com
@@ -9532,6 +9594,7 @@ xz.pphimalayanrt.com
 995120.net
 99520.love
 996.com
+996404.xyz
 9965dns.com
 9966.com
 9966.org
@@ -15058,6 +15121,7 @@ bcfy188.com
 bcgf.cc
 bcghotel.com
 bchdemo.site
+bchlkj.com
 bchrt.com
 bcisz.org
 bcitb.com
@@ -17816,6 +17880,7 @@ boyi.info
 boyikang.com
 boying360.com
 boyingsj.com
+boyinhotel.com
 boyishu.me
 boylondonchina.com
 boyoucy.com
@@ -19233,6 +19298,7 @@ cardqu.com
 cardyang.com
 care110.com
 caredear.com
+careduka.com
 career-js.com
 careerchina.com
 careerexe.com
@@ -19436,6 +19502,7 @@ cbtimer.com
 cburi.com
 cbvac.com
 cbvvt.com
+cbvx8.com
 cbxs.net
 cby.me
 cbzr.com
@@ -19991,6 +20058,7 @@ cdkeynogap.com
 cdkf.com
 cdkjbg.com
 cdkjw.org
+cdks.run
 cdkyfc.com
 cdlaobing.com
 cdlbmy.com
@@ -20519,6 +20587,7 @@ ceydz.com
 ceyice.net
 ceyige.com
 cezhu.net
+cf-china.info
 cf-ns.com
 cf-ns.net
 cf-ns.site
@@ -21360,6 +21429,7 @@ chenyou123.com
 chenyu.me
 chenyudong.com
 chenyuemz.com
+chenyuwulian.com
 chenyyds.com
 chenzao.com
 chenzhicheng.com
@@ -23214,6 +23284,7 @@ cibonet.com
 cibresearch.com
 cibuser.com
 cic-js.com
+cicadayun.com
 cicaf.com
 cicba.net
 cicc.com
@@ -24172,6 +24243,7 @@ cn-zhentai.com
 cn-zhongrui.com
 cn.bing.com
 cn.bing.net
+cn.eset.com
 cn.mm.bing.net
 cn.net
 cn.online.standardchartered.com
@@ -26707,6 +26779,7 @@ cscjedu.com
 csclc.com
 cscmgg.com
 csct-china.com
+cscxsemi.com
 csd568.com
 csdc.info
 csdczx.com
@@ -27960,6 +28033,7 @@ daidongxi.com
 daief.tech
 daigege.com
 daigou.com
+daigraphia.com
 daihaobiao.com
 daihing.com
 daijuchuang.net
@@ -28560,6 +28634,7 @@ dayiwater.com
 dayong.name
 dayoo.com
 dayrui.com
+dayscamera.com
 daysou.com
 dayspringpharma.com
 dayss.com
@@ -28929,7 +29004,6 @@ deepermobile.com
 deepfast.com
 deepin-ai.com
 deepin.com
-deepin.io
 deepin.org
 deepinghost.com
 deepinmind.com
@@ -44148,6 +44222,7 @@ haeye.net
 hafei.com
 hafuyoufk.com
 hagaozhong.com
+hagibis.com
 haguan.com
 haguworld.com
 haha168.com
@@ -49925,6 +50000,7 @@ huinkj.net
 huion.com
 huiqia.net
 huiqianfan.com
+huiqibaike.com
 huiqiyidiantong.com
 huiqiyu.com
 huiqk.com
@@ -50218,6 +50294,7 @@ huohuacdn.com
 huohuahudong.com
 huohudun.com
 huohuo.com
+huoideas.com
 huoji.com
 huojiaba.com
 huojitui.com
@@ -53460,6 +53537,7 @@ iprun.com
 ips.com
 ips8.com
 ipsebe.com
+ipshu.com
 ipshudi.com
 ipsmap.com
 ipssh.net
@@ -53755,6 +53833,7 @@ ist-zl.com
 istarshine.com
 istartsurf.com
 istcw.com
+istoreos.com
 istpei.com
 istrongcloud.com
 istrongcloud.net
@@ -55605,6 +55684,7 @@ jiawuzi.com
 jiaxianggame.com
 jiaxianghudong.com
 jiaxiangxm.com
+jiaxiao.pub
 jiaxiao100.com
 jiaxiaozhijia.com
 jiaxiaozhilian.com
@@ -58407,6 +58487,7 @@ juexiaotime.com
 juexinw.com
 jueywo.com
 jufa-composite.com
+jufa.vip
 jufaanli.com
 jufair.com
 jufeng313.com
@@ -58931,6 +59012,7 @@ jxnyc.net
 jxpdf.com
 jxphone.com
 jxphyz.com
+jxpp.com
 jxpta.com
 jxqcw.com
 jxqtkj.com
@@ -62365,6 +62447,7 @@ law-wei.com
 law01.net
 law6888.com
 lawasst.com
+lawaxi.net
 lawbang.com
 lawbridge.org
 lawbus.net
@@ -62463,6 +62546,7 @@ lbsrmyy.com
 lbswjt.com
 lbszx.com
 lbtek.com
+lbu.cc
 lbv1.com
 lbwbw.com
 lbx777.com
@@ -62829,6 +62913,7 @@ lei001.com
 leiaomold.com
 leibei.cc
 leiboyiqi.com
+leidacj.com
 leidianip.com
 leifengshi120.com
 leigod.com
@@ -63816,6 +63901,7 @@ lingla.com
 linglingkaimen.com
 linglingmo.site
 linglong.dev
+linglong.space
 linglongart.com
 linglonglife.com
 linglongtech.com
@@ -66729,6 +66815,7 @@ maka.mobi
 makaevent.com
 makaidong.com
 makaiqian.com
+make-w0rld-static.club
 makeapp.co
 makeblock.com
 makecn.net
@@ -66849,6 +66936,7 @@ mangxia.com
 mangxuewang.com
 mangzhongbrand.com
 mangzitian.com
+mangzx.com
 manhinggroup.com
 manhua1.com
 manhua365.com
@@ -70050,6 +70138,7 @@ mvoicer.com
 mvote.net
 mvpdj.com
 mvpmeta.com
+mvpmob.com
 mvprpg.com
 mvpsky.com
 mvs-intel.com
@@ -70061,6 +70150,7 @@ mw.com
 mw1950.com
 mwadx.com
 mwave.tech
+mwcdns.com
 mwclg.com
 mwcloudcdn.com
 mwcloudcdn.info
@@ -70645,6 +70735,7 @@ naifei.pro
 naifenzhiku.com
 naijian.net
 nail-auto.com
+nails7.com
 naimal.com
 naimei.com
 naipan.com
@@ -71345,6 +71436,7 @@ networkbench.com
 networkesl.com
 networklo.com
 netzonesoft.com
+netzz.net
 neu-reality.com
 neucrack.com
 neuedu.com
@@ -71680,6 +71772,7 @@ niaocms.com
 niaogebiji.com
 niaola.com
 niaoquan.fun
+niaosuangao.online
 niaowoclub.com
 niaoyun.com
 niba.com
@@ -73665,6 +73758,7 @@ ocn187.com
 ocnttv.com
 ocpuritech.com
 ocsjs.com
+ocssaas.com
 oct-asia.com
 oct-cts.com
 octbay.com
@@ -74248,6 +74342,7 @@ openwbs.com
 openwrt.ai
 openwrt.pro
 openxiaoniu.com
+openxsea.com
 operachina.com
 operatorcom.com
 opfed.com
@@ -76055,6 +76150,7 @@ pjjyzx.com
 pjlyds.com
 pjob.net
 pjtime.com
+pjtka.com
 pk106.com
 pk137.com
 pk2234.com
@@ -78186,6 +78282,7 @@ qingdouw.com
 qingf001.com
 qingfanqie.com
 qingfeichina.com
+qingfengchuxing.com
 qingfengjiaoyu.com
 qingflow.com
 qingfo.com
@@ -78696,6 +78793,7 @@ qlxiaozhan.com
 qlxyedu.com
 qlxzj.com
 qlydw.com
+qlyjt.com
 qlyygl.com
 qlyyqd.com
 qlzygs.com
@@ -80770,6 +80868,7 @@ rikua.com
 rili11.com
 rilijingling.com
 rilingpec.com
+riliri.com
 rilvtong.com
 rim20.com
 rimaiwang.com
@@ -80861,6 +80960,7 @@ rjfeng.com
 rjghome.com
 rjh0.com
 rjhcsoft.com
+rjitxy.com
 rjlqq.com
 rjoy.com
 rjpharm.com
@@ -82601,6 +82701,7 @@ sclanyingkj.com
 sclf.org
 sclive.net
 scll.cc
+scloudgda.com
 sclrjc.com
 sclsnk.com
 sclssz.com
@@ -83166,6 +83267,7 @@ sdstet.com
 sdstg.com
 sdstrong.com
 sdstslyy.com
+sdstudy.vip
 sdswitch.com
 sdswtz.com
 sdsxwz.net
@@ -91857,6 +91959,7 @@ tedastock.com
 teddymobile.net
 tedushi.com
 tedx.net
+tedy.cc
 teejia.com
 teeqee.com
 tefact.com
@@ -93613,6 +93716,7 @@ tooseo.com
 tootour.com
 toouoo.com
 top-cnc.com
+top-dianjingfeng.com
 top-elan.com
 top-shanghai.com
 top-trust.com
@@ -94444,6 +94548,7 @@ ttxsonline.com
 ttxuanpai.com
 ttxx8888.com
 ttyec.com
+ttyfp.com
 ttyfund.com
 ttyinfo.com
 ttyingqiu.com
@@ -95401,6 +95506,7 @@ uewaf.com
 uez.com
 uf-crm.com
 uf-tobacco.com
+ufancycase.com
 ufanw.com
 ufcap.com
 ufcs.com
@@ -99297,6 +99403,7 @@ wh6yy.com
 wh6z.com
 wh702g.ren
 whabl.net
+whaee.com
 whafxh.org
 whagcg.com
 whairport.com
@@ -100875,6 +100982,7 @@ wsfnk.com
 wsgeogen.com
 wsgjj.com
 wsgjp.com
+wsglb.com
 wsglb.net
 wsglb0.com
 wsglb0.info
@@ -101633,6 +101741,7 @@ wxw120.com
 wxwerp.com
 wxwjk5.com
 wxwmdq.com
+wxworklive.com
 wxwtblg.com
 wxwzt.com
 wxxfltg.com
@@ -102355,6 +102464,7 @@ xdsp.mobi
 xdsyzzs.com
 xdter.com
 xdtev.com
+xdtool.com
 xdtos.com
 xduim.com
 xduoo.com
@@ -104881,6 +104991,7 @@ xmzjtjckmy.com
 xmzmmr.com
 xmzmy.com
 xmzs.org
+xmzsyg.site
 xmzwdgm.com
 xmzyark.com
 xmzzy.net
@@ -105063,6 +105174,7 @@ xn--rhqv96g
 xn--rht439a44bdyk.com
 xn--rhtr03fbrm.com
 xn--riqi041otpd.com
+xn--rpv331d.com
 xn--rss237b.com
 xn--rss404ac6aj60e.net
 xn--rsss0ke5ghnj.com
@@ -110876,6 +110988,7 @@ yunlitz.com
 yunliunet.com
 yunlsp.com
 yunlucn.cc
+yunma99.com
 yunmai.com
 yunmayi.com
 yunmc.vip
@@ -110955,6 +111068,7 @@ yunshow.com
 yunshtk.com
 yunshunxx.com
 yunshuren.com
+yunshuwh.com
 yunsiya.com
 yunsom.com
 yunsong.com
@@ -111775,6 +111889,7 @@ yzzxjyjt.com
 yzzxxz.com
 yzzy-online.com
 yzzy20-play.com
+yzzy29-play.com
 yzzyimages.com
 z-bank.com
 z-henergy.com
