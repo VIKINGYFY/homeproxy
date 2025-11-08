@@ -959,6 +959,7 @@ return view.extend({
 
 		so = ss.option(form.Value, 'server_port', _('Port'),
 			_('The port of the DNS server.'));
+		so.placeholder = 'auto';
 		so.datatype = 'port';
 
 		so = ss.option(form.Value, 'path', _('Path'),
