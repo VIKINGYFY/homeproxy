@@ -1273,9 +1273,7 @@ deezer.com
 definebabe.com
 deja.com
 delcamp.net
-delicious.com
 demo.unlock-music.dev
-democrats.org
 demosisto.hk
 deno.dev
 depositphotos.com
@@ -1733,6 +1731,7 @@ flagsonline.it
 flecheinthepeche.fr
 fleshbot.com
 fleursdeslettres.com
+flexclip.com
 flexpool.io
 flgjustice.org
 flickr.com
@@ -2650,6 +2649,7 @@ imagefap.com
 imageflea.com
 imageglass.org
 images-gaytube.com
+images.prismic.io
 imageshack.us
 imagevenue.com
 imagezilla.net
