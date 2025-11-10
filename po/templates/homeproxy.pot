@@ -980,7 +980,7 @@ msgid "HTTP"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:950
-msgid "HTTP3"
+msgid "HTTP/3"
 msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:332

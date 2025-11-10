@@ -1003,8 +1003,8 @@ msgid "HTTP"
 msgstr "HTTP"
 
 #: htdocs/luci-static/resources/view/homeproxy/client.js:950
-msgid "HTTP3"
-msgstr "HTTP3"
+msgid "HTTP/3"
+msgstr ""
 
 #: htdocs/luci-static/resources/view/homeproxy/server.js:332
 msgid ""
@@ -3128,3 +3128,6 @@ msgstr "有效端口值"
 #: htdocs/luci-static/resources/homeproxy.js:328
 msgid "valid uuid"
 msgstr "有效 uuid"
+
+#~ msgid "HTTP3"
+#~ msgstr "HTTP3"
