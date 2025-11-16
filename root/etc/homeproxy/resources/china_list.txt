@@ -6,6 +6,8 @@ a2.mzstatic.com
 a3.mzstatic.com
 a4.mzstatic.com
 a5.mzstatic.com
+activate.activation-v2.kaspersky.com
+activation-v2.geo.kaspersky.com
 activation-v2.kaspersky.com
 adcdownload.apple.com
 adcdownload.apple.com.akadns.net
@@ -119,6 +121,11 @@ ctldl.windowsupdate.com
 cueme-api.quark.cn
 customization-cdn.dell.com
 dartsearch-cn.net
+dc1-cert.ksn.kaspersky-labs.com
+dc1-file.ksn.kaspersky-labs.com
+dc1-pp.ksn.kaspersky-labs.com
+dc1-st.ksn.kaspersky-labs.com
+dc1.ksn.kaspersky-labs.com
 dd-cdn.origin-apple.com.akadns.net
 dds.dell.com
 dejavu.apple.com
@@ -164,6 +171,7 @@ downloaddispatch.itunes.apple.com
 ea2cn-dev-outlet.dell.com
 ea2cn-prod-outlet.dell.com
 ea2cn-staging-outlet.dell.com
+edge.geo.kaspersky.com
 emmapplecodevice.googleapis.com
 emoi-cncdn.bing.com
 experiments.apple.com
@@ -286,9 +294,29 @@ js-cdn.music.apple.com
 kc.kexinshe.com
 km.support.apple.com
 ksn-cinfo-geo.kaspersky-labs.com
+ksn-cinfo.geoksn.kaspersky.com
+ksn-crypto-info-geo.kaspersky-labs.com
+ksn-crypto-kas-geo.kaspersky-labs.com
+ksn-crypto-tcert-geo.kaspersky-labs.com
+ksn-crypto-url-geo.kaspersky-labs.com
+ksn-crypto-verdict-geo.kaspersky-labs.com
+ksn-crypto-wifiplus-geo.kaspersky-labs.com
+ksn-crypto-wifiplus.geoksn.kaspersky.com
+ksn-dc1-cert.geoksn.kaspersky.com
+ksn-dc1-file.geoksn.kaspersky.com
+ksn-dc1.geoksn.kaspersky.com
 ksn-file-geo.kaspersky-labs.com
+ksn-file.geoksn.kaspersky.com
+ksn-info-geo.kaspersky-labs.com
+ksn-info.geoksn.kaspersky.com
+ksn-kas.geoksn.kaspersky.com
+ksn-mdr.geoksn.kaspersky.com
+ksn-tcert-geo.kaspersky-labs.com
+ksn-tcert.geoksn.kaspersky.com
 ksn-url-geo.kaspersky-labs.com
+ksn-url.geoksn.kaspersky.com
 ksn-verdict-geo.kaspersky-labs.com
+ksn-verdict.geoksn.kaspersky.com
 l2-uberproxy.corp.google.com
 learn.microsoft.com
 logger-dev.corp.google.com
@@ -297,6 +325,7 @@ login.corp.google.com
 lv.queniujq.cn
 manga.bilibili.com
 maps.apple.com
+mdr.ksn.kaspersky-labs.com
 menu-static.gog-statics.com
 mesu-cdn.apple.com.akadns.net
 mesu-china.apple.com.akadns.net
@@ -408,6 +437,7 @@ redirector.gvt1.com
 redirector.offline-maps.gvt1.com
 redirector.snap.gvt1.com
 redirector.xn--ngstr-lra8j.com
+refresh-bkg.activation-v2.kaspersky.com
 res-1.cdn.office.net
 res.cdn.office.net
 reserve-prime.apple.com
@@ -12534,6 +12564,7 @@ anyv.net
 anyview.net
 anyway.fm
 anyway.red
+anywlan.com
 anywood.com
 anyxz.com
 anzerclub.com
@@ -27669,6 +27700,7 @@ cztrjs.com
 cztv.cc
 cztv.com
 cztv.tv
+cztvcdn.com
 cztvcloud.com
 cztzkg.com
 czur.com
@@ -38475,6 +38507,7 @@ geekluo.com
 geekmaker.com
 geekman.vip
 geeknev.com
+geekpark
 geekpark.net
 geekpwn.org
 geeksblog.cc
@@ -91341,7 +91374,6 @@ tapque.com
 tapsvc.com
 taptap-api.com
 taptap.com
-taptap.io
 taptapcode.com
 taptapdada.com
 tapulsads.ru
@@ -92862,7 +92894,6 @@ tinywan.com
 tinyyuan.com
 tipaipai.com
 tipask.com
-tipdim.org
 tipdm.com
 tipdm.org
 tipray.com
