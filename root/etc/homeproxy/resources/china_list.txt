@@ -41,7 +41,6 @@ avail.googleflights.net
 b.c2r.ts.cdn.office.net
 bag-cdn.itunes-apple.com.akadns.net
 bag.itunes.apple.com
-bbs.ztedevices.com
 beacons.gcp.gvt2.com
 beacons.gvt2.com
 beacons2.gvt2.com
@@ -581,7 +580,6 @@ www.microsoft.com
 www.pxcc.com
 www.recaptcha.net
 www.support.apple.com
-www.ztedevices.com
 www4-static.gog-statics.com
 xn--flw351e.com
 xp.apple.com
@@ -45155,6 +45153,7 @@ hapierxia.com
 hapingapp.com
 hapipixia.com
 hapiyixia.com
+hapjs.org
 haplat.net
 happi123.com
 happigo.com
