@@ -188,6 +188,16 @@ function parse_dnsquery(strquery) {
 
 }
 
+function filter_existing_nodes(nodes) {
+	if (type(nodes) !== 'array' || isEmpty(nodes))
+		return [];
+
+	return filter(nodes, (k) => {
+		const node = uci.get_all(uciconfig, k) || {};
+		return !isEmpty(node);
+	});
+}
+
 function generate_endpoint(node) {
 	if (type(node) !== 'object' || isEmpty(node))
 		return null;
@@ -678,7 +688,9 @@ if (!isEmpty(main_node)) {
 	let urltest_nodes = [];
 
 	if (main_node === 'urltest') {
-		const main_urltest_nodes = normalize_list(uci.get(uciconfig, ucimain, 'main_urltest_nodes'));
+		const main_urltest_nodes = filter_existing_nodes(
+			normalize_list(uci.get(uciconfig, ucimain, 'main_urltest_nodes'))
+		);
 		const main_urltest_interval = uci.get(uciconfig, ucimain, 'main_urltest_interval');
 		const main_urltest_tolerance = uci.get(uciconfig, ucimain, 'main_urltest_tolerance');
 
@@ -694,16 +706,24 @@ if (!isEmpty(main_node)) {
 	} else {
 		const main_node_cfg = uci.get_all(uciconfig, main_node) || {};
 		if (main_node_cfg.type === 'wireguard') {
-			push(config.endpoints, generate_endpoint(main_node_cfg));
-			config.endpoints[length(config.endpoints)-1].tag = 'main-out';
+			const main_endpoint = generate_endpoint(main_node_cfg);
+			if (main_endpoint) {
+				main_endpoint.tag = 'main-out';
+				push(config.endpoints, main_endpoint);
+			}
 		} else {
-			push(config.outbounds, generate_outbound(main_node_cfg));
-			config.outbounds[length(config.outbounds)-1].tag = 'main-out';
+			const main_outbound = generate_outbound(main_node_cfg);
+			if (main_outbound) {
+				main_outbound.tag = 'main-out';
+				push(config.outbounds, main_outbound);
+			}
 		}
 	}
 
 	if (main_udp_node === 'urltest') {
-		const main_udp_urltest_nodes = normalize_list(uci.get(uciconfig, ucimain, 'main_udp_urltest_nodes'));
+		const main_udp_urltest_nodes = filter_existing_nodes(
+			normalize_list(uci.get(uciconfig, ucimain, 'main_udp_urltest_nodes'))
+		);
 		const main_udp_urltest_interval = uci.get(uciconfig, ucimain, 'main_udp_urltest_interval');
 		const main_udp_urltest_tolerance = uci.get(uciconfig, ucimain, 'main_udp_urltest_tolerance');
 
@@ -719,22 +739,37 @@ if (!isEmpty(main_node)) {
 	} else if (dedicated_udp_node) {
 		const main_udp_node_cfg = uci.get_all(uciconfig, main_udp_node) || {};
 		if (main_udp_node_cfg.type === 'wireguard') {
-			push(config.endpoints, generate_endpoint(main_udp_node_cfg));
-			config.endpoints[length(config.endpoints)-1].tag = 'main-udp-out';
+			const main_udp_endpoint = generate_endpoint(main_udp_node_cfg);
+			if (main_udp_endpoint) {
+				main_udp_endpoint.tag = 'main-udp-out';
+				push(config.endpoints, main_udp_endpoint);
+			}
 		} else {
-			push(config.outbounds, generate_outbound(main_udp_node_cfg));
-			config.outbounds[length(config.outbounds)-1].tag = 'main-udp-out';
+			const main_udp_outbound = generate_outbound(main_udp_node_cfg);
+			if (main_udp_outbound) {
+				main_udp_outbound.tag = 'main-udp-out';
+				push(config.outbounds, main_udp_outbound);
+			}
 		}
 	}
 
 	for (let i in urltest_nodes) {
 		const urltest_node = uci.get_all(uciconfig, i) || {};
+		if (isEmpty(urltest_node))
+			continue;
+
 		if (urltest_node.type === 'wireguard') {
-			push(config.endpoints, generate_endpoint(urltest_node));
-			config.endpoints[length(config.endpoints)-1].tag = 'cfg-' + i + '-out';
+			const endpoint = generate_endpoint(urltest_node);
+			if (endpoint) {
+				endpoint.tag = 'cfg-' + i + '-out';
+				push(config.endpoints, endpoint);
+			}
 		} else {
-			push(config.outbounds, generate_outbound(urltest_node));
-			config.outbounds[length(config.outbounds)-1].tag = 'cfg-' + i + '-out';
+			const outbound = generate_outbound(urltest_node);
+			if (outbound) {
+				outbound.tag = 'cfg-' + i + '-out';
+				push(config.outbounds, outbound);
+			}
 		}
 	}
 } else if (!isEmpty(default_outbound)) {
@@ -746,7 +781,7 @@ if (!isEmpty(main_node)) {
 			return;
 
 		if (cfg.node === 'urltest') {
-			const urltest_list = normalize_list(cfg.urltest_nodes);
+			const urltest_list = filter_existing_nodes(normalize_list(cfg.urltest_nodes));
 			push(config.outbounds, {
 				type: 'urltest',
 				tag: 'cfg-' + cfg['.name'] + '-out',
@@ -760,24 +795,35 @@ if (!isEmpty(main_node)) {
 			urltest_nodes = [...urltest_nodes, ...filter(urltest_list, (l) => !~index(urltest_nodes, l))];
 		} else {
 			const outbound = uci.get_all(uciconfig, cfg.node) || {};
+			if (isEmpty(outbound))
+				return;
+
 			if (outbound.type === 'wireguard') {
-				push(config.endpoints, generate_endpoint(outbound));
-				config.endpoints[length(config.endpoints)-1].bind_interface = cfg.bind_interface;
-				config.endpoints[length(config.endpoints)-1].detour = get_outbound(cfg.outbound);
+				const endpoint = generate_endpoint(outbound);
+				if (!endpoint)
+					return;
+
+				endpoint.bind_interface = cfg.bind_interface;
+				endpoint.detour = get_outbound(cfg.outbound);
 				if (cfg.domain_resolver)
-					config.endpoints[length(config.endpoints)-1].domain_resolver = {
+					endpoint.domain_resolver = {
 						server: get_resolver(cfg.domain_resolver),
 						strategy: cfg.domain_strategy
 					};
+				push(config.endpoints, endpoint);
 			} else {
-				push(config.outbounds, generate_outbound(outbound));
-				config.outbounds[length(config.outbounds)-1].bind_interface = cfg.bind_interface;
-				config.outbounds[length(config.outbounds)-1].detour = get_outbound(cfg.outbound);
+				const routed_outbound = generate_outbound(outbound);
+				if (!routed_outbound)
+					return;
+
+				routed_outbound.bind_interface = cfg.bind_interface;
+				routed_outbound.detour = get_outbound(cfg.outbound);
 				if (cfg.domain_resolver)
-					config.outbounds[length(config.outbounds)-1].domain_resolver = {
+					routed_outbound.domain_resolver = {
 						server: get_resolver(cfg.domain_resolver),
 						strategy: cfg.domain_strategy
 					};
+				push(config.outbounds, routed_outbound);
 			}
 			push(routing_nodes, cfg.node);
 		}
@@ -785,10 +831,18 @@ if (!isEmpty(main_node)) {
 
 	for (let i in filter(urltest_nodes, (l) => !~index(routing_nodes, l))) {
 		const urltest_node = uci.get_all(uciconfig, i) || {};
-		if (urltest_node.type === 'wireguard')
-			push(config.endpoints, generate_endpoint(urltest_node));
-		else
-			push(config.outbounds, generate_outbound(urltest_node));
+		if (isEmpty(urltest_node))
+			continue;
+
+		if (urltest_node.type === 'wireguard') {
+			const endpoint = generate_endpoint(urltest_node);
+			if (endpoint)
+				push(config.endpoints, endpoint);
+		} else {
+			const outbound = generate_outbound(urltest_node);
+			if (outbound)
+				push(config.outbounds, outbound);
+		}
 	}
 }
 
