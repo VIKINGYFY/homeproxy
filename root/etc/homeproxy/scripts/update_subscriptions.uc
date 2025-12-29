@@ -104,6 +104,19 @@ function normalize_list(value) {
 	return [to_string(value)];
 }
 
+function normalize_alpn(value) {
+	if (!has_value(value))
+		return null;
+	if (type(value) === 'array')
+		return value;
+	if (type(value) === 'string') {
+		let items = map(split(value, ','), (v) => trim(v));
+		items = filter(items, (v) => length(v));
+		return length(items) ? items : null;
+	}
+	return [to_string(value)];
+}
+
 function normalize_host_list(value) {
 	if (!has_value(value))
 		return null;
@@ -245,7 +258,7 @@ function parse_mihomo_proxy(proxy) {
 			password: proxy.password,
 			tls: '1',
 			tls_sni: tls_sni || proxy.peer,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure,
 			tls_utls: sing_features.with_utls ? anytls_fp : null,
 			anytls_idle_session_check_interval: to_string(proxy['idle-session-check-interval']),
@@ -267,7 +280,7 @@ function parse_mihomo_proxy(proxy) {
 			packet_encoding: proxy['packet-encoding'],
 			tls: (proxy.tls === true) ? '1' : '0',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
@@ -293,7 +306,7 @@ function parse_mihomo_proxy(proxy) {
 			hysteria_obfs_password: proxy['obfs-password'],
 			tls: '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
@@ -318,7 +331,7 @@ function parse_mihomo_proxy(proxy) {
 			hysteria_up_mbps: parse_mihomo_speed(proxy.up),
 			tls: '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
@@ -334,6 +347,7 @@ function parse_mihomo_proxy(proxy) {
 			packet_encoding: proxy['packet-encoding'],
 			tls: (proxy.tls === true || proxy['reality-opts']) ? '1' : '0',
 			tls_sni,
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tls_reality: proxy['reality-opts'] ? '1' : '0',
@@ -352,7 +366,7 @@ function parse_mihomo_proxy(proxy) {
 			password: proxy.password,
 			tls: (proxy.tls === false) ? '0' : '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
@@ -441,7 +455,7 @@ function parse_mihomo_proxy(proxy) {
 			tuic_heartbeat: has_value(tuic_heartbeat) ? to_string(tuic_heartbeat) : null,
 			tls: '1',
 			tls_sni: proxy['disable-sni'] ? null : tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
