@@ -235,6 +235,7 @@ function generate_outbound(node) {
 	if (type(node) !== 'object' || isEmpty(node))
 		return null;
 
+	const tls_utls_value = (node.type === 'anytls' && isEmpty(node.tls_utls)) ? 'chrome' : node.tls_utls;
 	const outbound = {
 		type: node.type,
 		tag: 'cfg-' + node['.name'] + '-out',
@@ -324,9 +325,9 @@ function generate_outbound(node) {
 				config: node.tls_ech_config,
 				config_path: node.tls_ech_config_path
 			} : null,
-			utls: !isEmpty(node.tls_utls) ? {
+			utls: !isEmpty(tls_utls_value) ? {
 				enabled: true,
-				fingerprint: node.tls_utls
+				fingerprint: tls_utls_value
 			} : null,
 			reality: (node.tls_reality === '1') ? {
 				enabled: true,

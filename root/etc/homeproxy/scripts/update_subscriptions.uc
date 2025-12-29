@@ -104,6 +104,19 @@ function normalize_list(value) {
 	return [to_string(value)];
 }
 
+function normalize_alpn(value) {
+	if (!has_value(value))
+		return null;
+	if (type(value) === 'array')
+		return value;
+	if (type(value) === 'string') {
+		let items = map(split(value, ','), (v) => trim(v));
+		items = filter(items, (v) => length(v));
+		return length(items) ? items : null;
+	}
+	return [to_string(value)];
+}
+
 function normalize_host_list(value) {
 	if (!has_value(value))
 		return null;
@@ -227,6 +240,34 @@ function parse_mihomo_proxy(proxy) {
 	const tls_fingerprint = proxy['client-fingerprint'] || proxy.fingerprint;
 
 	switch (proxy.type) {
+	case 'anytls': {
+		let anytls_fp = (proxy['client-fingerprint'] !== null && proxy['client-fingerprint'] !== undefined) ?
+			proxy['client-fingerprint'] : proxy.fingerprint;
+		anytls_fp = to_string(anytls_fp);
+		if (anytls_fp === 'none' || anytls_fp === 'disable' || anytls_fp === 'disabled')
+			anytls_fp = null;
+		else if (!has_value(anytls_fp))
+			anytls_fp = 'chrome';
+		const tls_insecure = (proxy['skip-cert-verify'] === true || proxy.allowInsecure === true || proxy.allowInsecure === '1') ? '1'
+			: (proxy['skip-cert-verify'] === false || proxy.allowInsecure === false) ? '0' : null;
+		config = {
+			label: proxy.name,
+			type: 'anytls',
+			address: proxy.server,
+			port: to_string(proxy.port),
+			password: proxy.password,
+			tls: '1',
+			tls_sni: tls_sni || proxy.peer,
+			tls_alpn: normalize_alpn(proxy.alpn),
+			tls_insecure,
+			tls_utls: sing_features.with_utls ? anytls_fp : null,
+			anytls_idle_session_check_interval: to_string(proxy['idle-session-check-interval']),
+			anytls_idle_session_timeout: to_string(proxy['idle-session-timeout']),
+			anytls_min_idle_session: to_string(proxy['min-idle-session']),
+			tcp_fast_open: (proxy.tfo === true) ? '1' : null
+		};
+		break;
+	}
 	case 'vmess':
 		config = {
 			label: proxy.name,
@@ -239,7 +280,7 @@ function parse_mihomo_proxy(proxy) {
 			packet_encoding: proxy['packet-encoding'],
 			tls: (proxy.tls === true) ? '1' : '0',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
@@ -265,7 +306,7 @@ function parse_mihomo_proxy(proxy) {
 			hysteria_obfs_password: proxy['obfs-password'],
 			tls: '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
@@ -290,7 +331,7 @@ function parse_mihomo_proxy(proxy) {
 			hysteria_up_mbps: parse_mihomo_speed(proxy.up),
 			tls: '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
@@ -306,6 +347,7 @@ function parse_mihomo_proxy(proxy) {
 			packet_encoding: proxy['packet-encoding'],
 			tls: (proxy.tls === true || proxy['reality-opts']) ? '1' : '0',
 			tls_sni,
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tls_reality: proxy['reality-opts'] ? '1' : '0',
@@ -324,7 +366,7 @@ function parse_mihomo_proxy(proxy) {
 			password: proxy.password,
 			tls: (proxy.tls === false) ? '0' : '1',
 			tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
@@ -413,7 +455,7 @@ function parse_mihomo_proxy(proxy) {
 			tuic_heartbeat: has_value(tuic_heartbeat) ? to_string(tuic_heartbeat) : null,
 			tls: '1',
 			tls_sni: proxy['disable-sni'] ? null : tls_sni,
-			tls_alpn: normalize_list(proxy.alpn),
+			tls_alpn: normalize_alpn(proxy.alpn),
 			tls_insecure: bool_to_uci(proxy['skip-cert-verify']),
 			tcp_fast_open: (proxy.tfo === true) ? '1' : null
 		};
@@ -487,21 +529,27 @@ function parse_uri(uri) {
 		uri = split(trim(uri), '://');
 
 		switch (uri[0]) {
-		case 'anytls':
-			/* https://github.com/anytls/anytls-go/blob/v0.0.8/docs/uri_scheme.md */
-			url = parseURL('http://' + uri[1]) || {};
-			params = url.searchParams || {};
+	case 'anytls':
+		/* https://github.com/anytls/anytls-go/blob/v0.0.8/docs/uri_scheme.md */
+		url = parseURL('http://' + uri[1]) || {};
+		params = url.searchParams || {};
+		let anytls_fp = params.fp || params.fingerprint;
+		if (anytls_fp === 'none' || anytls_fp === 'disable' || anytls_fp === 'disabled')
+			anytls_fp = null;
+		else if (!has_value(anytls_fp))
+			anytls_fp = 'chrome';
 
-			config = {
-				label: url.hash ? urldecode(url.hash) : null,
-				type: 'anytls',
-				address: url.hostname,
-				port: url.port,
-				password: urldecode(url.username),
-				tls: '1',
-				tls_sni: params.sni,
-				tls_insecure: (params.insecure === '1') ? '1' : '0'
-			};
+		config = {
+			label: url.hash ? urldecode(url.hash) : null,
+			type: 'anytls',
+			address: url.hostname,
+			port: url.port,
+			password: urldecode(url.username),
+			tls: '1',
+			tls_sni: params.sni,
+			tls_insecure: (params.insecure === '1') ? '1' : '0',
+			tls_utls: sing_features.with_utls ? anytls_fp : null
+		};
 
 			break;
 		case 'http':
