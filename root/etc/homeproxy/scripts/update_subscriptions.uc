@@ -228,6 +228,13 @@ function parse_mihomo_proxy(proxy) {
 
 	switch (proxy.type) {
 	case 'anytls': {
+		let anytls_fp = (proxy['client-fingerprint'] !== null && proxy['client-fingerprint'] !== undefined) ?
+			proxy['client-fingerprint'] : proxy.fingerprint;
+		anytls_fp = to_string(anytls_fp);
+		if (anytls_fp === 'none' || anytls_fp === 'disable' || anytls_fp === 'disabled')
+			anytls_fp = null;
+		else if (!has_value(anytls_fp))
+			anytls_fp = 'chrome';
 		const tls_insecure = (proxy['skip-cert-verify'] === true || proxy.allowInsecure === true || proxy.allowInsecure === '1') ? '1'
 			: (proxy['skip-cert-verify'] === false || proxy.allowInsecure === false) ? '0' : null;
 		config = {
@@ -240,7 +247,7 @@ function parse_mihomo_proxy(proxy) {
 			tls_sni: tls_sni || proxy.peer,
 			tls_alpn: normalize_list(proxy.alpn),
 			tls_insecure,
-			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
+			tls_utls: sing_features.with_utls ? anytls_fp : null,
 			anytls_idle_session_check_interval: to_string(proxy['idle-session-check-interval']),
 			anytls_idle_session_timeout: to_string(proxy['idle-session-timeout']),
 			anytls_min_idle_session: to_string(proxy['min-idle-session']),
@@ -508,21 +515,27 @@ function parse_uri(uri) {
 		uri = split(trim(uri), '://');
 
 		switch (uri[0]) {
-		case 'anytls':
-			/* https://github.com/anytls/anytls-go/blob/v0.0.8/docs/uri_scheme.md */
-			url = parseURL('http://' + uri[1]) || {};
-			params = url.searchParams || {};
+	case 'anytls':
+		/* https://github.com/anytls/anytls-go/blob/v0.0.8/docs/uri_scheme.md */
+		url = parseURL('http://' + uri[1]) || {};
+		params = url.searchParams || {};
+		let anytls_fp = params.fp || params.fingerprint;
+		if (anytls_fp === 'none' || anytls_fp === 'disable' || anytls_fp === 'disabled')
+			anytls_fp = null;
+		else if (!has_value(anytls_fp))
+			anytls_fp = 'chrome';
 
-			config = {
-				label: url.hash ? urldecode(url.hash) : null,
-				type: 'anytls',
-				address: url.hostname,
-				port: url.port,
-				password: urldecode(url.username),
-				tls: '1',
-				tls_sni: params.sni,
-				tls_insecure: (params.insecure === '1') ? '1' : '0'
-			};
+		config = {
+			label: url.hash ? urldecode(url.hash) : null,
+			type: 'anytls',
+			address: url.hostname,
+			port: url.port,
+			password: urldecode(url.username),
+			tls: '1',
+			tls_sni: params.sni,
+			tls_insecure: (params.insecure === '1') ? '1' : '0',
+			tls_utls: sing_features.with_utls ? anytls_fp : null
+		};
 
 			break;
 		case 'http':

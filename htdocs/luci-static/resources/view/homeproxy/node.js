@@ -40,6 +40,11 @@ function parseShareLink(uri, features) {
 			/* https://github.com/anytls/anytls-go/blob/v0.0.8/docs/uri_scheme.md */
 			url = new URL('http://' + uri[1]);
 			params = url.searchParams;
+			let anytls_fp = params.get('fp');
+			if (['none', 'disable', 'disabled'].includes(anytls_fp))
+				anytls_fp = null;
+			else if (!anytls_fp)
+				anytls_fp = 'chrome';
 
 			/* Check if password exists */
 			if (!url.username)
@@ -53,7 +58,8 @@ function parseShareLink(uri, features) {
 				password: url.username ? decodeURIComponent(url.username) : null,
 				tls: '1',
 				tls_sni: params.get('sni'),
-				tls_insecure: (params.get('insecure') === '1') ? '1' : '0'
+				tls_insecure: (params.get('insecure') === '1') ? '1' : '0',
+				tls_utls: features.with_utls ? anytls_fp : null
 			};
 
 			break;
