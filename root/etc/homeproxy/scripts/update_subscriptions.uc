@@ -227,6 +227,27 @@ function parse_mihomo_proxy(proxy) {
 	const tls_fingerprint = proxy['client-fingerprint'] || proxy.fingerprint;
 
 	switch (proxy.type) {
+	case 'anytls': {
+		const tls_insecure = (proxy['skip-cert-verify'] === true || proxy.allowInsecure === true || proxy.allowInsecure === '1') ? '1'
+			: (proxy['skip-cert-verify'] === false || proxy.allowInsecure === false) ? '0' : null;
+		config = {
+			label: proxy.name,
+			type: 'anytls',
+			address: proxy.server,
+			port: to_string(proxy.port),
+			password: proxy.password,
+			tls: '1',
+			tls_sni: tls_sni || proxy.peer,
+			tls_alpn: normalize_list(proxy.alpn),
+			tls_insecure,
+			tls_utls: sing_features.with_utls ? tls_fingerprint : null,
+			anytls_idle_session_check_interval: to_string(proxy['idle-session-check-interval']),
+			anytls_idle_session_timeout: to_string(proxy['idle-session-timeout']),
+			anytls_min_idle_session: to_string(proxy['min-idle-session']),
+			tcp_fast_open: (proxy.tfo === true) ? '1' : null
+		};
+		break;
+	}
 	case 'vmess':
 		config = {
 			label: proxy.name,
