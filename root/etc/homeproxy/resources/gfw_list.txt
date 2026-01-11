@@ -140,7 +140,6 @@ abematv.akamaized.net
 abitno.linpie.com
 ablwang.com
 aboluowang.com
-about.gitlab.com
 about.me
 abplive.com
 abs.edu
@@ -192,6 +191,7 @@ agoogleaday.com
 agro.hk
 ai.binwang.me
 ai.dev
+ai.studio
 aiosearch.com
 aiph.net
 airasia.com
@@ -1017,6 +1017,7 @@ chrome.com
 chromecast.com
 chromeexperiments.com
 chromestatus.com
+chromium.org
 chuang-yen.org
 chubold.com
 chubun.com
@@ -1259,6 +1260,7 @@ david-kilgour.com
 dawangidc.com
 daxa.cn
 daylife.com
+dazn.com
 db.tt
 dbgjd.com
 dcard.tw
@@ -2000,6 +2002,7 @@ github.io
 githubassets.com
 githubcopilot.com
 githubusercontent.com
+gitlab.com
 gitlab.net
 gizlen.net
 gjczz.com
@@ -2770,7 +2773,6 @@ ismalltits.com
 ismprofessional.net
 isohunt.com
 israbox.com
-issues.chromium.org
 issuu.com
 istars.co.nz
 istockphoto.com
@@ -3754,6 +3756,8 @@ onmypc.org
 onthehunt.com
 ontrac.com
 oojj.de
+ooni.io
+ooni.org
 open.com.hk
 open.firstory.me
 openai.com
@@ -5740,6 +5744,7 @@ xbabe.com
 xbookcn.com
 xbtce.com
 xcafe.in
+xcancel.com
 xcity.jp
 xcritic.com
 xerotica.com
