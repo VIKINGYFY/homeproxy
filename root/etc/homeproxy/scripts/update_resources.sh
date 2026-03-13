@@ -34,10 +34,7 @@ check_list_update() {
 		return 2
 	fi
 
-	local AUTH_HEADER=""
-	[ -n "$GITHUB_TOKEN" ] && AUTH_HEADER="--header=Authorization: Bearer $GITHUB_TOKEN"
-
-	local NEW_VER=$(curl -sL $AUTH_HEADER "https://api.github.com/repos/$REPO_NAME/releases/latest" | jsonfilter -e "@.tag_name")
+	local NEW_VER=$(curl -sL ${GITHUB_TOKEN:+-H "Authorization: Bearer $GITHUB_TOKEN"} "https://api.github.com/repos/$REPO_NAME/releases/latest" | jsonfilter -e "@.tag_name")
 	if [ -z "$NEW_VER" ]; then
 		log "[$(to_upper "$LIST_FILE")] Failed to get the latest version, please retry later."
 
