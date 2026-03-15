@@ -7007,6 +7007,7 @@ xz.pphimalayanrt.com
 52playgame.com
 52pojie.com
 52post.com
+52ppt.com
 52qixiang.com
 52qmct.com
 52qqba.com
@@ -15288,6 +15289,7 @@ bademeiji.com
 badmintoncn.com
 badmintone.com
 badong.net
+badou.com
 badouxueyuan.com
 badu.com
 badudns.cc
@@ -46323,6 +46325,7 @@ haohanjx.com
 haohanpower.tech
 haohanstar.com
 haohao8888.com
+haohaodoc.com
 haohaotuan.com
 haohaowan.com
 haohaowan.net
@@ -63761,6 +63764,7 @@ lazycat.cloud
 lazycatmicroserver.com
 lazycomposer.com
 lazydim.com
+lazyer.net
 lazymap.com
 lazyren.com
 lazystones.com
@@ -100732,6 +100736,7 @@ wenjuanbang.com
 wenjuanshow.com
 wenjuntech.com
 wenkaoba.com
+wenkeju.com
 wenku.in
 wenku.net
 wenku365.com
@@ -116120,7 +116125,6 @@ zimufy.com
 zimuism.com
 zimujiang.com
 zimuzu.com
-zimuzu.io
 zindall.com
 zine.la
 zinffer.com
